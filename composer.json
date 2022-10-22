@@ -12,5 +12,5 @@
 	"autoload": {
 		"files": ["index.php"]
 	},
-	"minimum-stability": "stable",
+	"minimum-stability": "stable"
 }
