@@ -6,12 +6,11 @@
 	"authors": [
 		{
 			"name": "devic developer",
-			"homepage": "devic.info"
+			"homepage": "httpa://devic.info/"
 		}
 	],
 	"autoload": {
 		"files": ["index.php"]
 	},
 	"minimum-stability": "stable",
-	"require": {}
 }
