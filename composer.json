@@ -1,20 +1,17 @@
 {
-    "name": "victor/zappy",
-    "description": "This application is a BLOG MANAGEMENT SYSTEM which allows users to post and manage various kinds of blog content.<br>",
-    "type": "project",
-    "license": "MIT",
-    "autoload": {
-		"files": ["index.php"]
-
-    },
-
-    "authors": [
-        {
-            "name": "Devic developer",
+	"name": "victor/zappy",
+	"description": "a lightweight php application that performs Blog management operations",
+	"type": "project",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "devic developer",
 			"homepage": "devic.info"
-        }
-    ],
-
-    "minimum-stability": "stable",
-    "require": {}
+		}
+	],
+	"autoload": {
+		"files": ["index.php"]
+	},
+	"minimum-stability": "stable",
+	"require": {}
 }

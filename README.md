@@ -27,6 +27,9 @@ sudo /opt/lampp/lampp start
   ####3.CRUD functionalities:  allows all users to create,read,update and delete their content in a managed format <br>
   ####4.Profile update option: allows users to update their profile/account details <br>
 
+##Homepage
+https://dry-tor-98820.herokuapp.com/
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
