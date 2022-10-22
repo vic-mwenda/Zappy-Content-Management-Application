@@ -1,16 +1,2 @@
-{
-	"name": "victor/zappy",
-	"description": "a lightweight php application that performs Blog management operations",
-	"type": "project",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "devic developer",
-			"homepage": "httpa://devic.info/"
-		}
-	],
-	"autoload": {
-		"files": ["index.php"]
-	},
-	"minimum-stability": "stable"
-}
+{}
+
