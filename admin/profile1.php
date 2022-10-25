@@ -3,7 +3,7 @@ include ('includes/connection.php');
 include ('includes/adminheader.php');
 if (isset($_SESSION['username'])) {
 	$username = $_SESSION['username'];
-	$query = "SELECT * FROM users WHERE username = '$username'" ;
+	$query = "SELECT * FROM users WHERE username = '$username'" ; 
 	$result= mysqli_query($conn , $query) or die (mysqli_error($conn));
 	if (mysqli_num_rows($result) > 0 ) {
 		$row = mysqli_fetch_array($result);
@@ -17,9 +17,9 @@ if (isset($_SESSION['username'])) {
 	}
 
 if (isset($_POST['update'])) {
-require "../GUMP-master/gump.class.php";
+require "../gump.class.php";
 $gump = new GUMP();
-$_POST = $gump->sanitize($_POST);
+$_POST = $gump->sanitize($_POST); 
 
 
 $gump->validation_rules(array(
@@ -43,7 +43,7 @@ if($validated_data === false) {
 	<?php
 }
 
-else if (!password_verify($validated_data['currentpassword'] ,  $userpassword))
+else if (!password_verify($validated_data['currentpassword'] ,  $userpassword))   
 {
 	echo  "<center><font color='red'>Current password is wrong! </font></center>";
 }
@@ -51,10 +51,10 @@ else if (empty($_POST['newpassword']) && empty($_POST['confirmnewpassword']))
 {
 $userpassword = $row['password'];
 }
-else if ($_POST['newpassword'] !== $_POST['confirmnewpassword'])
+else if ($_POST['newpassword'] !== $_POST['confirmnewpassword']) 
 {
 	echo  "<center><font color='red'>New password and Confirm New password do not match </font></center>";
-
+	
 }
 
 else {
@@ -78,17 +78,17 @@ else {
 ?>
 <div id="wrapper">
 
-
+       
        <?php include 'includes/adminnav.php';?>
         <div id="page-wrapper">
 
             <div class="container-fluid">
 
-
+               
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Welcome to your Profile
+                            Welcome to your Profile 
                             <small><?php echo $_SESSION['firstname']; ?></small>
                         </h1>
 <form role="form" action="" method="POST" enctype="multipart/form-data">
@@ -132,20 +132,20 @@ else {
 
                     </div>
                 </div>
-
+                
 
             </div>
-
+            
 
         </div>
-
+        
    <?php 'includes/admin_footer.php';?> -->
     </div>
+    
+    <script src="js/jquery.js"></script>
 
-    <script src="assets/js/jquery.js"></script>
-
-
-    <script src="assets/js/bootstrap.min.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 

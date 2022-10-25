@@ -14,12 +14,12 @@ session_start()
     <meta name="author" content="">
 
     <title>Dashboard - <?php echo $_SESSION['username']; ?></title>
-    <link rel="icon" type="image/png" href="../img/vimeo.png">
 
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="../assets/css/bootstrap.css">
-	<link rel="stylesheet" href="../assets/css/sb-admin-rtl.css">
-	<link href="../assets/css/sb-admin.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/sb-admin-rtl.css">
+	<link rel="stylesheet" href="css/variables.css">
+	<link href="css/sb-admin.css" rel="stylesheet">
 
 </head>
 

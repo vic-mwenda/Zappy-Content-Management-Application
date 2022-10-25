@@ -12,7 +12,7 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                         <div class="col-xs-4">
-            <a href="publishnews" class="btn btn-primary">Add New</a>
+            <a href="publishnews.php" class="btn btn-primary">Add New</a>
             </div>
                             ALL POSTS
                         </h1>
@@ -307,10 +307,10 @@ else {
 </div>
 </div>
 </div>
- <script src="assets/js/jquery.js"></script>
+ <script src="js/jquery.js"></script>
 
 
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 

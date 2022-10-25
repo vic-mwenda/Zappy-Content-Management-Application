@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header">
-						Welcome to NEWS-BUZZ
+						Welcome to ZAPPY
 						<small><?php echo $_SESSION['firstname']; ?></small>
 					</h1>
 
@@ -88,10 +88,10 @@
 
 		<?php 'includes/adminfooter.php';?>
 	</div>
-	<script src="assets/js/jquery.js"></script>
+	<script src="js/jquery.js"></script>
 
 
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
 </body>
 

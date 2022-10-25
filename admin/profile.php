@@ -150,10 +150,10 @@ else {
    <?php 'includes/admin_footer.php';?> -->
     </div>
 
-    <script src="assets/js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
 
 
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 
