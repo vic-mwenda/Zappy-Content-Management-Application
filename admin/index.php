@@ -148,8 +148,9 @@
 	<input name="user_password" type="password" class="form-control" id="password" placeholder="Password" required>
 
 	<button name="login" type="submit">Log In</button>
+	<a href="admin_register.php" style="padding-top: 20px;text-align: center">do not have account register now?</a>
 	<div class="social">
-		<div class="go"><i class="fab fa-google"></i>  Google</div>
+		<div class="go"><i class="fab fa-google"></i> Google </div>
 		<div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
 	</div>
 </form>

@@ -2,7 +2,7 @@
 <?php include 'includes/adminheader.php';?>
 <?php
 if (isset($_GET['id'])) {
-	$id = mysqli_real_escape_string($conn, $_GET['id']);  
+	$id = mysqli_real_escape_string($conn, $_GET['id']);
 }
 else {
 	header('location:posts.php');
@@ -27,9 +27,9 @@ while ($row = mysqli_fetch_array($run_query)) {
 	$post_status = $row['status'];
 
 if (isset($_POST['update'])) {
-require "../gump.class.php";
+	require "../GUMP-master/gump.class.php";
 $gump = new GUMP();
-$_POST = $gump->sanitize($_POST); 
+$_POST = $gump->sanitize($_POST);
 
 $gump->validation_rules(array(
     'title'    => 'required|max_len,120|min_len,15',
@@ -45,7 +45,7 @@ $validated_data = $gump->run($_POST);
 if($validated_data === false) {
     ?>
     <center><font color="red" > <?php echo $gump->get_readable_errors(true); ?> </font></center>
-    <?php 
+    <?php
 }
 else {
     $post_title = $validated_data['title'];
@@ -58,7 +58,8 @@ else {
     $post_status = $_POST['status'];
 }
 
-    
+
+//TODO:Improve on the logic for uploading and storing images
 
     $image = $_FILES['image']['name'];
     $ext = $_FILES['image']['type'];
@@ -70,7 +71,7 @@ else {
     {
 echo "<script>alert('Image size is not proper');
 window.location.href = 'editposts.php?id=$id';</script>";
-    
+
     }
     else if (!in_array($ext, $validExt)){
         echo "<script>alert('Not a valid image');
@@ -78,12 +79,12 @@ window.location.href = 'editposts.php?id=$id';</script>";
     exit();
     }
     else {
-        $folder  = '../allpostpics/';
+        $folder  = '../assets/img/Posts';
         $imgext = strtolower(pathinfo($image, PATHINFO_EXTENSION) );
         $picture = rand(1000 , 1000000) .'.'.$imgext;
         move_uploaded_file($_FILES['image']['tmp_name'], $folder.$picture);
     }
-  
+
         $queryupdate = "UPDATE posts SET title = '$post_title' , tag = '$post_tag' , content='$post_content' , 	status = '$post_status' , image = '$picture' , postdate = '$post_date' WHERE id= '$post_id' " ;
         $result = mysqli_query($conn , $queryupdate) or die(mysqli_error($conn));
         if (mysqli_affected_rows($conn) > 0) {
@@ -110,7 +111,7 @@ window.location.href = 'editposts.php?id=$id';</script>";
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            UPDATE NEWS 
+                            UPDATE NEWS
                         </h1>
                         <form role="form" action="" method="POST" enctype="multipart/form-data">
 
@@ -128,7 +129,7 @@ window.location.href = 'editposts.php?id=$id';</script>";
 	<div class="input-group">
 		<label for="post_status">Post Status</label>
 			<select name="status" class="form-control">
-			<?php if($_SESSION['role'] == 'user') { echo "<option value='draft' >draft</option>"; } else { ?> 
+			<?php if($_SESSION['role'] == 'user') { echo "<option value='draft' >draft</option>"; } else { ?>
         <option value="<?php  echo $post_status; ?>"><?php  echo  $post_status;  ?></option>>
 			<?php
 if ($post_status == 'published') {
@@ -148,7 +149,7 @@ if ($post_status == 'published') {
     <div class="form-group">
         <label for="post_image">Post Image</label>
 		<img class="img-responsive" width="200" src="../allpostpics/<?php echo $post_image; ?>" alt="Photo">
-		<input type="file" name="image"> 
+		<input type="file" name="image">
     </div>
 	<div class="form-group">
 		<label for="post_content">Post Content</label>
@@ -166,7 +167,7 @@ if ($post_status == 'published') {
 
 <script src="js/jquery.js"></script>
 
-    
+
     <script src="js/bootstrap.min.js"></script>
 
 </body>

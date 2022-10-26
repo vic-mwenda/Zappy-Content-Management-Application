@@ -12,13 +12,13 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            PUBLISH NEWS 
+                            PUBLISH POST
                         </h1>
 <?php
 if (isset($_POST['publish'])) {
-require "../gump.class.php";
+require "../GUMP-master/gump.class.php";
 $gump = new GUMP();
-$_POST = $gump->sanitize($_POST); 
+$_POST = $gump->sanitize($_POST);
 
 $gump->validation_rules(array(
     'title'    => 'required|max_len,120|min_len,15',
@@ -34,7 +34,7 @@ $validated_data = $gump->run($_POST);
 if($validated_data === false) {
     ?>
     <center><font color="red" > <?php echo $gump->get_readable_errors(true); ?> </font></center>
-    <?php 
+    <?php
     $post_title = $_POST['title'];
       $post_tag = $_POST['tags'];
       $post_content = $_POST['content'];
@@ -48,7 +48,7 @@ if (isset($_SESSION['firstname'])) {
     }
     $post_date = date('Y-m-d');
     $post_status = 'draft';
-    
+
 
     $image = $_FILES['image']['name'];
     $ext = $_FILES['image']['type'];
@@ -65,7 +65,7 @@ echo "<script>alert('Image size is not proper');</script>";
 
     }
     else {
-        $folder  = '../allpostpics/';
+        $folder  = '../assets/img/Posts/';
         $imgext = strtolower(pathinfo($image, PATHINFO_EXTENSION) );
         $picture = rand(1000 , 1000000) .'.'.$imgext;
         if(move_uploaded_file($_FILES['image']['tmp_name'], $folder.$picture)) {
@@ -91,9 +91,9 @@ echo "<script>alert('Image size is not proper');</script>";
         <input type="text" name="title" placeholder = "ENTER TITLE " value= "<?php if(isset($_POST['publish'])) { echo $post_title; } ?>"  class="form-control" required>
     </div>
 
-    
+
     <div class="form-group">
-        <label for="post_image">Post Image </label> <font color='brown' > &nbsp;&nbsp;(Allowed image size: 1024 KB) </font> 
+        <label for="post_image">Post Image </label> <font color='brown' > &nbsp;&nbsp;(Allowed image size: 1024 KB) </font>
         <input type="file" name="image" >
     </div>
     <div class="form-group">
@@ -110,17 +110,17 @@ echo "<script>alert('Image size is not proper');</script>";
 
  </div>
                 </div>
-                
+
             </div>
 
         </div>
-        
+
    <?php 'includes/admin_footer.php';?> -->
     </div>
-    
+
     <script src="js/jquery.js"></script>
 
-    
+
     <script src="js/bootstrap.min.js"></script>
 
 </body>

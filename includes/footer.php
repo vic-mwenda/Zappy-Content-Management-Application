@@ -39,45 +39,33 @@
 					<h3 class="footer-heading">Recent Posts</h3>
 
 					<ul class="footer-links footer-blog-entry list-unstyled">
-						<li>
-							<a href="single-post.html" class="d-flex align-items-center">
-								<img src="assets/img/post-sq-1.jpg" alt="" class="img-fluid me-3">
-								<div>
-									<div class="post-meta d-block"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-									<span>5 Great Startup Tips for Female Founders</span>
-								</div>
-							</a>
-						</li>
+						<?php
+						$query = "SELECT * FROM `posts` WHERE status='published' ORDER BY updated_on DESC";
+						$run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+						if (mysqli_num_rows($run_query) > 0) {
+							while ($row = mysqli_fetch_assoc($run_query)) {
+								$post_id = $row['id'];
+								$post_title = $row['title'];
+								$post_author = $row['author'];
+								$post_image = $row['image'];
+								$post_tags = $row['tag'];
+								$post_date = $row['postdate'];
+								if ($post_status='published'){
+									?>
+									<li>
+									<a href="single-post.php?post=<?php echo $post_id;?>" class="d-flex align-items-center">
+										<img src="assets/img/Posts/<?php echo $post_image?>" alt="" class="img-fluid me-3">
 
-						<li>
-							<a href="single-post.html" class="d-flex align-items-center">
-								<img src="assets/img/post-sq-2.jpg" alt="" class="img-fluid me-3">
-								<div>
-									<div class="post-meta d-block"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-									<span>What is the son of Football Coach John Gruden, Deuce Gruden doing Now?</span>
-								</div>
-							</a>
-						</li>
+										<div>
+											<div class="post-meta d-block"><span class="date"><?php echo $post_tags?></span> <span class="mx-1">&bullet;</span> <span><?php echo $post_date?></span></div>
+											<span><?php echo $post_title?></span>
+										</div>
+									</a>
+									</li>
 
-						<li>
-							<a href="single-post.html" class="d-flex align-items-center">
-								<img src="assets/img/post-sq-3.jpg" alt="" class="img-fluid me-3">
-								<div>
-									<div class="post-meta d-block"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-									<span>Life Insurance And Pregnancy: A Working Mom’s Guide</span>
-								</div>
-							</a>
-						</li>
-
-						<li>
-							<a href="single-post.html" class="d-flex align-items-center">
-								<img src="assets/img/post-sq-4.jpg" alt="" class="img-fluid me-3">
-								<div>
-									<div class="post-meta d-block"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-									<span>How to Avoid Distraction and Stay Focused During Video Calls?</span>
-								</div>
-							</a>
-						</li>
+								<?php }
+								else{ echo "No Latest posts";}}}
+						?>
 
 					</ul>
 
@@ -92,7 +80,7 @@
 			<div class="row justify-content-between">
 				<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
 					<div class="copyright">
-						© Copyright <strong><span>ZenBlog</span></strong>. All Rights Reserved
+						© Copyright <strong><span>2022</span></strong>. All Rights Reserved
 					</div>
 
 					<div class="credits">
@@ -103,11 +91,12 @@
 
 				<div class="col-md-6">
 					<div class="social-links mb-3 mb-lg-0 text-center text-md-end">
-						<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+						<a href="https://twitter.com/devic_co" class="twitter"><i class="bi bi-twitter"></i></a>
 						<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-						<a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+						<a href="https://github.com/vic-mwenda" class="instagram"><i class="bi bi-github"></i></a>
 						<a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-						<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+						<a href="https://www.linkedin.com/in/victor-mwenda-5b2b1219a/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+
 					</div>
 
 				</div>
