@@ -75,7 +75,7 @@ class GUMP
     public function __construct($lang = 'en')
     {
         if ($lang) {
-            $lang_file = __DIR__ . DIRECTORY_SEPARATOR .DIRECTORY_SEPARATOR.$lang.'.php';
+            $lang_file = __DIR__.DIRECTORY_SEPARATOR.'lang'.DIRECTORY_SEPARATOR.$lang.'.php';
 
             if (file_exists($lang_file)) {
                 $this->lang = $lang;
@@ -541,7 +541,7 @@ class GUMP
      */
     protected function get_messages()
     {
-        $lang_file = __DIR__ . DIRECTORY_SEPARATOR .DIRECTORY_SEPARATOR.$this->lang.'.php';
+        $lang_file = __DIR__.DIRECTORY_SEPARATOR.'lang'.DIRECTORY_SEPARATOR.$this->lang.'.php';
         $messages = require $lang_file;
 
         if ($validation_methods_errors = self::$validation_methods_errors) {
