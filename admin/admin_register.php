@@ -1,5 +1,5 @@
 <?php
-include('includes/connection.php');
+ require __DIR__ . '/includes/adminheader.php';
 
 	if (isset($_POST['add'])) {
 		include "../GUMP-master/gump.class.php";

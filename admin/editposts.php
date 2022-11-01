@@ -1,5 +1,4 @@
-<?php include 'includes/connection.php';?>
-<?php include 'includes/adminheader.php';?>
+<?php require __DIR__ . '/includes/adminheader.php'; ?>
 <?php
 if (isset($_GET['id'])) {
 	$id = mysqli_real_escape_string($conn, $_GET['id']);

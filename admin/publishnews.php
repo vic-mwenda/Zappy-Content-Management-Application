@@ -1,9 +1,9 @@
-<?php include 'includes/adminheader.php';
+<?php require __DIR__ . '/includes/adminheader.php'; ?>
 
 ?>
     <div id="wrapper">
 
-       <?php include 'includes/adminnav.php';?>
+		<?php require __DIR__ . '/includes/adminnav.php'; ?>
         <div id="page-wrapper">
 
             <div class="container-fluid">
