@@ -1,6 +1,6 @@
 <?php include 'includes/header.php';?>
         <!-- Navigation Bar -->
-   <?php include 'includes/navbar.php';?>
+   <?php include 'includes/nav_bar.php';?>
         <!-- Navigation Bar -->
 
     <div class="container">

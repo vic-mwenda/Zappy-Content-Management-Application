@@ -12,25 +12,27 @@
 				<div class="col-6 col-lg-2">
 					<h3 class="footer-heading">Navigation</h3>
 					<ul class="footer-links list-unstyled">
-						<li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
-						<li><a href="index.html"><i class="bi bi-chevron-right"></i> Blog</a></li>
-						<li><a href="category.html"><i class="bi bi-chevron-right"></i> Categories</a></li>
-						<li><a href="single-post.html"><i class="bi bi-chevron-right"></i> Single Post</a></li>
-						<li><a href="about.html"><i class="bi bi-chevron-right"></i> About us</a></li>
-						<li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+						<li><a href="index.php?"><i class="bi bi-chevron-right"></i> Home</a></li>
+						<li><a href="category.php?category=technology"><i class="bi bi-chevron-right"></i> Categories</a></li>
+						<li><a href="single-post.php?post=31"><i class="bi bi-chevron-right"></i> Single Post</a></li>
+						<li><a href="about.php?"><i class="bi bi-chevron-right"></i> About us</a></li>
+						<li><a href="admin/admin_register.php?"><i class="bi bi-chevron-right"></i> Register</a></li>
 					</ul>
 				</div>
 				<div class="col-6 col-lg-2">
 					<h3 class="footer-heading">Categories</h3>
 					<ul class="footer-links list-unstyled">
-						<li><a href="category.html"><i class="bi bi-chevron-right"></i> Business</a></li>
-						<li><a href="category.html"><i class="bi bi-chevron-right"></i> Culture</a></li>
-						<li><a href="category.html"><i class="bi bi-chevron-right"></i> Sport</a></li>
-						<li><a href="category.html"><i class="bi bi-chevron-right"></i> Food</a></li>
-						<li><a href="category.html"><i class="bi bi-chevron-right"></i> Politics</a></li>
-						<li><a href="category.html"><i class="bi bi-chevron-right"></i> Celebrity</a></li>
-						<li><a href="category.html"><i class="bi bi-chevron-right"></i> Startups</a></li>
-						<li><a href="category.html"><i class="bi bi-chevron-right"></i> Travel</a></li>
+						<?php
+						$query = "SELECT tag FROM `posts`";
+						$run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+						if (mysqli_num_rows($run_query) > 0) {
+							while ($row = mysqli_fetch_assoc($run_query)) {
+								$post_tag = $row['tag'];
+								if (is_string($post_tag)){
+									?><li><a href="category.php?category=<?php echo $post_tag?>"><i class="bi bi-chevron-right"></i> <?php echo $post_tag?></a></li>
+								<?php }
+								else{ echo "No categories";}}}
+						?>
 
 					</ul>
 				</div>

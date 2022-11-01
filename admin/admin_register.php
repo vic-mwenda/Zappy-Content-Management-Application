@@ -2,7 +2,7 @@
 include('includes/connection.php');
 
 	if (isset($_POST['add'])) {
-		require "../GUMP-master/gump.class.php";
+		include "../GUMP-master/gump.class.php";
 		$gump = new GUMP();
 		$_POST = $gump->sanitize($_POST);
 

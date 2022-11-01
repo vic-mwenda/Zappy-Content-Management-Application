@@ -4,7 +4,8 @@
 ?>
 <?php include 'includes/header.php';?>
 
-<?php include 'includes/navbar.php';?>
+<?php include 'includes/nav_bar.php';?>
+
 
   <main id="main">
 
@@ -83,7 +84,7 @@
 			  ?>
             <div class="post-entry-1 lg">
               <a href="single-post.php?post=<?php echo $post_id; ?>"><img src="assets/img/Posts/<?php echo $post_image ?>" alt="" class="img-fluid"></a>
-              <div class="post-meta"><span class="date"><?php echo $post_tags; ?> </span> <span class="mx-1">&bullet;</span> <span><?php echo $post_date; ?></span></div>
+              <div class="post-meta"><span class="date"><a href="category.php?category=<?php echo $post_tags?>"> <span> <?php echo $post_tags; ?></span> </a>  <span class="mx-1">&bullet;</span> <span><?php echo $post_date; ?></span></div>
               <h2><a href="single-post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h2>
               <p class="mb-4 d-block"><?php echo substr($post_content, 0, 300) . '.........'; ?></p>
 
@@ -119,7 +120,7 @@
 								?>
 								<div class="post-entry-1">
 									<a href="single-post.php?post=<?php echo $post_id;?>"><img src="assets/img/Posts/<?php echo $post_image?>" alt="" class="img-fluid"></a>
-									<div class="post-meta"><span class="date"><?php echo $post_tags;?></span> <span class="mx-1">&bullet;</span> <span><?php echo $post_date;?></span></div>
+									<div class="post-meta"><a href="category.php?category=<?php echo $post_tags?>"><span class="date"><?php echo $post_tags;?></span></a> <span class="mx-1">&bullet;</span> <span><?php echo $post_date;?></span></div>
 									<h2><a href="single-post.php?post=<?php echo $post_id;?>"><?php echo $post_title;?></a></h2>
 								</div>
 							<?php }
@@ -144,7 +145,7 @@
 					  	?>
 					  <div class="post-entry-1">
 						  <a href="single-post.php?post=<?php echo $post_id;?>"><img src="assets/img/Posts/<?php echo $post_image?>" alt="" class="img-fluid"></a>
-						  <div class="post-meta"><span class="date"><?php echo $post_tags;?></span> <span class="mx-1">&bullet;</span> <span><?php echo $post_date;?></span></div>
+						  <div class="post-meta"><a href="category.php?category=<?php echo $post_tags?>"><span class="date"><?php echo $post_tags;?></span></a> <span class="mx-1">&bullet;</span> <span><?php echo $post_date;?></span></div>
 						  <h2><a href="single-post.php?post=<?php echo $post_id;?>"><?php echo $post_title;?></a></h2>
 					  </div>
 					  <?php }

@@ -1,7 +1,7 @@
 
 <?php include 'includes/header.php';?>
 
-<?php include 'includes/navbar.php';?>
+<?php include 'includes/nav_bar.php';?>
 <?php
 if (isset($_GET['post'])) {
     $post = $_GET['post'];
@@ -166,28 +166,33 @@ else {
             <div class="aside-block">
               <h3 class="aside-title">Categories</h3>
               <ul class="aside-links list-unstyled">
-                <li><a href=""><i class="bi bi-chevron-right"></i> Business</a></li>
-                <li><a href=""><i class="bi bi-chevron-right"></i> Culture</a></li>
-                <li><a href=""><i class="bi bi-chevron-right"></i> Sport</a></li>
-                <li><a href=""><i class="bi bi-chevron-right"></i> Food</a></li>
-                <li><a href=""><i class="bi bi-chevron-right"></i> Politics</a></li>
-                <li><a href=""><i class="bi bi-chevron-right"></i> Celebrity</a></li>
-                <li><a href=""><i class="bi bi-chevron-right"></i> Startups</a></li>
-                <li><a href=""><i class="bi bi-chevron-right"></i> Travel</a></li>
-              </ul>
+				  <?php
+				  $query = "SELECT tag FROM `posts`";
+				  $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+				  if (mysqli_num_rows($run_query) > 0) {
+					  while ($row = mysqli_fetch_assoc($run_query)) {
+						  $post_tag = $row['tag'];
+						  if (is_string($post_tag)){
+							  ?><li><a href="category.php?category=<?php echo $post_tag?>"><i class="bi bi-chevron-right"></i><?php echo $post_tag?></a></li>
+						  <?php }
+						  else{ echo "No categories";}}}
+				  ?>
             </div>
 
             <div class="aside-block">
               <h3 class="aside-title">Tags</h3>
               <ul class="aside-tags list-unstyled">
-                <li><a href="">Business</a></li>
-                <li><a href="">Culture</a></li>
-                <li><a href="">Sport</a></li>
-                <li><a href="">Food</a></li>
-                <li><a href="">Politics</a></li>
-                <li><a href="">Celebrity</a></li>
-                <li><a href="">Startups</a></li>
-                <li><a href="">Travel</a></li>
+				  <?php
+				  $query = "SELECT tag FROM `posts`";
+				  $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+				  if (mysqli_num_rows($run_query) > 0) {
+					  while ($row = mysqli_fetch_assoc($run_query)) {
+						  $post_tag = $row['tag'];
+						  if (is_string($post_tag)){
+							  ?><li><a href="category.php?category=<?php echo $post_tag?>"><?php echo $post_tag?></a></li>
+						  <?php }
+						  else{ echo "No categories";}}}
+				  ?>
               </ul>
             </div>
 
