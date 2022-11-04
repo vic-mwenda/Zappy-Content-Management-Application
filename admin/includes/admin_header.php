@@ -20,6 +20,7 @@ session_start()
 	<link rel="stylesheet" href="css/sb-admin-rtl.css">
 	<link rel="stylesheet" href="css/variables.css">
 	<link href="css/sb-admin.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/504f5c5a1a.js" crossorigin="anonymous"></script>
 
 </head>
 

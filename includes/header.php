@@ -24,6 +24,7 @@ session_start()
 	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 	<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/504f5c5a1a.js" crossorigin="anonymous"></script>
 
 	<!-- Template Main CSS Files -->
 	<link href="assets/css/variables.css" rel="stylesheet">

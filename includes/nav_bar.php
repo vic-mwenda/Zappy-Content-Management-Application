@@ -33,31 +33,57 @@
 						<?php }
 					  else{ echo "No categories";}}}
 					  ?>
-				</li>
 					</ul>
 
 				<li><a href="about.php?">About</a></li>
-				<li><a href="admin/admin_register.php?">Register</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><b class="caret"></b></a>
+
+
+
+					<ul class="dropdown-menu">
+						<?php
+						if (isset($_SESSION['username'])) {
+							?>
+							<li>
+								<a href="admin/profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="admin/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+							</li>
+						<?php
+						} else{
+							?>
+							<li>
+								<a href="admin/index.php"><i class="fa-solid fa-right-to-bracket"></i>Log In</a>
+							</li>
+						<?php
+						}
+						?>
+
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="mx-2 js-search-open"><span class="fa fa-search"></span><b class="caret"></b></a>
+					<div class="search-form-wrap js-search-form-wrap">
+						<button class="btn js-search-close"><span class="bi-x"></span></button>
+					</div><!-- End Search Form -->
+				</li>
 			</ul>
+
 		</nav><!-- .navbar -->
 
-		<div class="position-relative">
-			<a href="#" class="mx-2"><span class="bi-facebook"></span></a>
-			<a href="#" class="mx-2"><span class="bi-twitter"></span></a>
-			<a href="#" class="mx-2"><span class="bi-instagram"></span></a>
 
-			<a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+
+
+
+
+
 			<i class="bi bi-list mobile-nav-toggle"></i>
 
 			<!-- ======= Search Form ======= -->
-			<div class="search-form-wrap js-search-form-wrap">
-				<form action="search.php" method="post" class="search-form">
-					<span class="icon bi-search"></span>
-					<input type="text" placeholder="Search" class="form-control">
-					<input type="submit" placeholder="su">
-					<button class="btn js-search-close"><span class="bi-x"></span></button>
-				</form>
-			</div><!-- End Search Form -->
+
 
 		</div>
 
