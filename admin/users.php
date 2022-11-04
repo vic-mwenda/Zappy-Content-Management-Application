@@ -1,5 +1,5 @@
-<?php include ('includes/connection.php'); 
-include "includes/adminheader.php";
+<?php include ('includes/connection.php');
+include "includes/admin_header.php";
 if (isset($_SESSION['role'])) {
 $currentrole = $_SESSION['role'];
 }
@@ -9,22 +9,22 @@ window.location.href='./index.php'; </script>";
 }
 else if ($currentrole == 'superadmin') {
     ?>
- 
+
 
     <div id="wrapper">
 
-    
+
     <?php include "includes/adminnav.php"; ?>
 
         <div id="page-wrapper">
 
             <div class="container-fluid">
 
-                
+
                 <div class="row">
                     <div class="col-lg-12">
 
-                        
+
                         <h1 class="page-header">
                             All Users
                         </h1>
@@ -46,9 +46,9 @@ else if ($currentrole == 'superadmin') {
     </thead>
 
     <tbody>
-        
-        <?php 
-            
+
+        <?php
+
             $query = "SELECT * FROM users";
             $select_users = mysqli_query($conn, $query) or die(mysqli_error($conn));
             if (mysqli_num_rows($select_users) > 0 ) {
@@ -75,7 +75,7 @@ else if ($currentrole == 'superadmin') {
     </tbody>
  </table>
 
-<?php 
+<?php
 }
 
     if (isset($_GET['delete'])) {
@@ -101,7 +101,7 @@ else if ($currentrole == 'superadmin') {
     }
 }
 
-    
+
     if (isset($_GET['change_to_admin'])) {
         $the_user_id = $_GET['change_to_admin'];
 
@@ -133,13 +133,13 @@ else {
  </div>
  </div>
  </div>
- <?php 
+ <?php
 }
 else {
     ?>
     <div id="wrapper">
 
-    
+
     <?php include "includes/adminnav.php"; ?>
 
         <div id="page-wrapper">
@@ -159,19 +159,19 @@ else {
     <table class="table table-bordered table-hover">
     <thead>
         <tr>
-            
+
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
             <th>Role</th>
-            
+
         </tr>
     </thead>
 
     <tbody>
-        
-        <?php 
-            
+
+        <?php
+
             $query = "SELECT * FROM users";
             $select_users = mysqli_query($conn, $query) or die(mysqli_error($conn));
             if (mysqli_num_rows($select_users) > 0 ) {
@@ -194,7 +194,7 @@ else {
     </tbody>
  </table>
 
-<?php 
+<?php
 }
     ?>
     </div>

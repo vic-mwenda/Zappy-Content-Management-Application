@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/includes/adminheader.php'; ?>
+<?php require __DIR__ . '/includes/admin_header.php'; ?>
 
 ?>
     <div id="wrapper">

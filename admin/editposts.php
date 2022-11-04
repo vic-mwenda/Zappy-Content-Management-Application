@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/includes/adminheader.php'; ?>
+<?php require __DIR__ . '/includes/admin_header.php'; ?>
 <?php
 if (isset($_GET['id'])) {
 	$id = mysqli_real_escape_string($conn, $_GET['id']);

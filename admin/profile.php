@@ -1,6 +1,6 @@
 <?php
 include ('includes/connection.php');
-include ('includes/adminheader.php');
+include('includes/admin_header.php');
 if (isset($_SESSION['username'])) {
 	$username = $_SESSION['username'];
 	$query = "SELECT * FROM users WHERE username = '$username'" ;

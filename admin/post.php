@@ -1,8 +1,8 @@
 <?php include 'includes/connection.php';?>
-<?php include 'includes/adminheader.php';?>
+<?php include 'includes/admin_header.php';?>
 <?php
 if (isset($_GET['post'])) {
-	$post = mysqli_real_escape_string($conn, $_GET['post']);  
+	$post = mysqli_real_escape_string($conn, $_GET['post']);
 }
 else {
     header('location:posts.php');
@@ -27,7 +27,7 @@ while ($row = mysqli_fetch_array($run_query)) {
 	$post_status = $row['status'];
 
 	?>
-   
+
     <div id="wrapper">
        <?php include 'includes/adminnav.php';?>
     <div id="page-wrapper">
@@ -38,10 +38,10 @@ while ($row = mysqli_fetch_array($run_query)) {
 
         <div class="row">
 
-            
+
             <div class="col-lg-8">
 
-                
+
                 <hr>
 	       		<p><h2><a href="#"><?php echo $post_title; ?></a></h2></p>
                 <p><h3>by <a href="#"><?php echo $post_author; ?></a></h3></p>
@@ -54,10 +54,10 @@ while ($row = mysqli_fetch_array($run_query)) {
                 <hr>
                 <?php } }
                 else { echo"<script>alert('error');</script>"; } ?>
-	        	
+
   </div>
 
-           
+
 
         </div>
         </div>
@@ -65,12 +65,12 @@ while ($row = mysqli_fetch_array($run_query)) {
         </div>
         </div>
 
-   
 
-    
+
+
     <script src="js/jquery.js"></script>
 
-    
+
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
