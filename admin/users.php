@@ -5,7 +5,7 @@ $currentrole = $_SESSION['role'];
 }
 if ( $currentrole == 'user') {
 echo "<script> alert('ONLY ADMIN CAN VIEW USERS');
-window.location.href='./index.php'; </script>";
+window.location.href='./dashboard.php'; </script>";
 }
 else if ($currentrole == 'superadmin') {
     ?>

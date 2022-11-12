@@ -59,7 +59,7 @@ h6 {
     }
 }
 
-/* Top Navigation */
+ /*Top Navigation */
 .navbar-brand {
 	font-size: 20px;
 	font-weight: 700;
@@ -67,7 +67,7 @@ h6 {
 	font-family: var(--font-primary);
 }
 .navbar{
-	background: var(--color-white);
+	background: #f2f2f2;
 
 }
 

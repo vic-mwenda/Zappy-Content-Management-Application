@@ -1,3 +1,6 @@
+<?php
+include '../google_auth.php';
+?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -146,7 +149,7 @@
 	<button name="login" type="submit">Log In</button>
 	<a href="admin_register.php?" style="padding-top: 20px;text-align: center">do not have account register now?</a>
 	<div class="social">
-		<div class="go"><i class="fab fa-google"></i> Google </div>
+		<div class="go"><a href="<?php echo $client->createAuthUrl()?>"><i class="fab fa-google"></i> Google</a> </div>
 		<div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
 	</div>
 </form>

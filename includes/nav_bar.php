@@ -25,7 +25,9 @@
 						<?php
 						$query = "SELECT tag FROM `posts`";
 						$run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
-						if (mysqli_num_rows($run_query) > 0) {
+						$num_rows = mysqli_num_rows($run_query);
+						if ( $num_rows > 0) {
+
 						while ($row = mysqli_fetch_assoc($run_query)) {
 						$post_tag = $row['tag'];
 						if (is_string($post_tag)){
@@ -46,7 +48,7 @@
 						if (isset($_SESSION['username'])) {
 							?>
 							<li>
-								<a href="admin/profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+								<a href="admin/profile.php"><i class="fa fa-fw fa-user"></i> <?php echo $_SESSION['username']?></a>
 							</li>
 							<li class="divider"></li>
 							<li>
@@ -65,10 +67,8 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#" class="mx-2 js-search-open"><span class="fa fa-search"></span><b class="caret"></b></a>
-					<div class="search-form-wrap js-search-form-wrap">
-						<button class="btn js-search-close"><span class="bi-x"></span></button>
-					</div><!-- End Search Form -->
+					<a class=" js-search-open"><span class=""></a>
+						<button class=" js-search-close"></button>
 				</li>
 			</ul>
 
