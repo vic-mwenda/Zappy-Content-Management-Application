@@ -10,53 +10,26 @@
   <main id="main">
 
     <!-- ======= Hero Slider Section ======= -->
-    <section id="hero-slider" class="hero-slider">
-      <div class="container-md" data-aos="fade-in">
+    <section id="hero" class="hero">
+      <div class="container-fluid" data-aos="fade-in">
         <div class="row">
-          <div class="col-12">
-            <div class="swiper sliderFeaturedPosts">
-              <div class="swiper-wrapper">
-              <?php
-				  $query = "SELECT * FROM `posts` WHERE id BETWEEN 34 AND 36 ORDER BY updated_on DESC";
-					  $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
-					  if (mysqli_num_rows($run_query) > 0) {
-					  while ($row = mysqli_fetch_assoc($run_query)) {
-					  $post_title = $row['title'];
-					  $post_tags= $row['tag'];
-					  $post_date= $row['postdate'];
-					  $post_image= $row['image'];
-					  $post_id = $row['id'];
-					  $post_content = $row['content'];
-
-
-
-						  if ($post_status='published'){
-					  	?>
-							  <div class="swiper-slide">
-								  <a href="single-post.php?post=<?php echo $post_id;?>" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/Posts/<?php echo $post_image ?>');">
-									  <div class="img-bg-inner">
-										  <h2><?php echo $post_title;?></h2>
-										  <p><?php echo substr($post_content, 0, 300) . '.........'; ?></p>
-									  </div>
-								  </a>
-							  </div>
-
-						  <?php }
-					  else{ echo "No content posts";}}}
-					  ?>
-              </div>
-              <div class="custom-swiper-button-next">
-                <span class="bi-chevron-right"></span>
-              </div>
-              <div class="custom-swiper-button-prev">
-                <span class="bi-chevron-left"></span>
-              </div>
-
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </div>
+          <div class="col-sm-6 col-lg-6 justify-content-center">
+				  <h2 class="d-flex justify-content-center">
+					  Stay Curious
+				  </h2>
+				  <h4 class="d-flex justify-content-center">
+					  Discover Stories,thinking and expertise from writers <br>
+					 on any tech topic.
+				  </h4>
+			  <a href="admin/index.php" style="color: white">
+			  <div class="btn-get-started">
+				  Get Started
+			  </div>
+			  </a>
       </div>
+			<div class="col-6 hero-illustration">
+				<img src="assets/img/hero-illustration-2.svg" alt="illustration" class="img-fluid d-flex justify-content-center">
+			</div>
     </section>
 
     <section id="posts" class="posts">
@@ -160,7 +133,7 @@
                   <h3>Trending</h3>
                   <ul class="trending-post">
 					  <?php
-					  $query = "SELECT * FROM `posts` WHERE status='published' ORDER BY updated_on DESC";
+					  $query = "SELECT * FROM `posts` WHERE status='published' LIMIT 7";
 					  $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
 					  if (mysqli_num_rows($run_query) > 0) {
 					  while ($row = mysqli_fetch_assoc($run_query)) {

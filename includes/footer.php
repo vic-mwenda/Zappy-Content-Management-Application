@@ -5,7 +5,7 @@
 
 			<div class="row g-5">
 				<div class="col-lg-4">
-					<h3 class="footer-heading">About Zapp</h3>
+					<h3 class="footer-heading">About Zappy</h3>
 					<p> This is a tech blog developed by Devic developer #awesome content for awesome people</p>
 					<p><a href="about.html" class="footer-link-more">Learn More</a></p>
 				</div>
@@ -23,7 +23,7 @@
 					<h3 class="footer-heading">Categories</h3>
 					<ul class="footer-links list-unstyled">
 						<?php
-						$query = "SELECT tag FROM `posts`";
+						$query = "SELECT tag FROM `posts` LIMIT 5";
 						$run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
 						if (mysqli_num_rows($run_query) > 0) {
 							while ($row = mysqli_fetch_assoc($run_query)) {
@@ -42,7 +42,7 @@
 
 					<ul class="footer-links footer-blog-entry list-unstyled">
 						<?php
-						$query = "SELECT * FROM `posts` WHERE status='published' ORDER BY updated_on DESC";
+						$query = "SELECT * FROM `posts` WHERE status='published' ORDER BY updated_on DESC LIMIT 5";
 						$run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
 						if (mysqli_num_rows($run_query) > 0) {
 							while ($row = mysqli_fetch_assoc($run_query)) {
@@ -86,7 +86,7 @@
 					</div>
 
 					<div class="credits">
-						Designed by <a href="https://devic.info/">Devic Developer</a>
+						Built by <a href="https://devic.info/">Devic Developer</a>
 					</div>
 
 				</div>
