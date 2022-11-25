@@ -1,5 +1,7 @@
 <?php
  require __DIR__.'/includes/connection.php';
+ include '../google_auth.php';
+
 
 if (isset($_POST['add'])) {
 	include "../GUMP-master/gump.class.php";
@@ -44,8 +46,25 @@ if (isset($_POST['add'])) {
 		if (mysqli_affected_rows($conn) > 0) {
 
 			echo "<script>alert('REGISTERED SUCCESSFULLY');
-      	window.location.href='index.php';</script>";
+      	window.location.href='../email-confirmation.php';</script>";
 
+			//send verification email
+			$hash =md5(rand(1000,5000));
+
+			$to      = $email; // Send email to our user
+			$subject = 'Signup | Verification'; // Give the email a subject
+			$message = '
+  Thanks for signing up!Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+  ------------------------
+  Username: '.$username.'
+  Password: '.$password.'
+  ------------------------
+
+  Please click this link to activate your account:
+  http://localhost/Zappy/email-confirmation.php?email='.$email.'&hash='.$hash.''; // Our message above including the link
+
+			$headers = 'From:noreply@zappy' . "\r\n"; // Set from headers
+			mail($to, $subject, $message, $headers); // Send our email
 		}
 		else {
 			echo "<script>alert('An error occured, Try again!');</script>";
@@ -58,7 +77,7 @@ if (isset($_POST['add'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Admin Register</title>
+	<title>Register</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -89,24 +108,30 @@ if (isset($_POST['add'])) {
 			border-radius: 50%;
 		}
 		.shape:first-child{
-			background: linear-gradient(
-				#1845ad,
-				#23a2f6
-			);
-			left: -80px;
-			top: -80px;
+			background:#000000;
+			left: -100px;
+			top: -200px;
 		}
 		.shape:last-child{
-			background: linear-gradient(
-				to right,
-				#ff512f,
-				#f09819
-			);
-			right: -30px;
-			bottom: -80px;
+			background:#6C63FF;
+			right: -70px;
+			bottom: -300px;
 		}
+		@media (max-width: 738px) {
+			.shape{
+				display: none;
+			}
+			form{
+				height:800px;
+				background-color: #dddddd;
+
+			}
+		}
+
+
 		form{
-			height: 1000px;
+			margin-top: 50px;
+			height: 100%;
 			width: 400px;
 			background-color: rgba(255,255,255,0.13);
 			position: absolute;
@@ -120,11 +145,18 @@ if (isset($_POST['add'])) {
 			padding: 50px 35px;
 		}
 		form *{
-			font-family: 'Poppins',sans-serif;
+			font-family: 'EB Garamond', serif;
 			color: #1e1e1e;
 			letter-spacing: 0.5px;
 			outline: none;
 			border: none;
+		}
+
+		form h2{
+			font-size: 30px;
+			font-weight: 700;
+			color: #212529;
+			text-align: center;
 		}
 		form h3{
 			font-size: 32px;
@@ -166,6 +198,7 @@ if (isset($_POST['add'])) {
 		}
 		.social{
 			margin-top: 30px;
+			margin-bottom: 50px;
 			display: flex;
 		}
 		.social div{
@@ -186,6 +219,7 @@ if (isset($_POST['add'])) {
 		.social i{
 			margin-right: 4px;
 		}
+		}
 
 	</style>
 </head>
@@ -196,7 +230,7 @@ if (isset($_POST['add'])) {
 </div>
 <form method="POST" action="" enctype="multipart/form-data">
 
-	<h3>Register Here</h3>
+	<a href="../index.php?"><h2>ZAPPY</h2></a>
 
 	<label for="user_title">User Name</label>
 	<input type="text" name="username" class="form-control" required>
@@ -228,8 +262,8 @@ if (isset($_POST['add'])) {
 	<a href="index.php" style="margin-top: 40px;text-align: center">Have account. <span>Login now?</span> </a>
 
 	<div class="social">
-		<div class="go"><i class="fab fa-google"></i>  Google</div>
-		<div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+		<div class="go"><a href="<?php echo $client->createAuthUrl()?>"><i class="fab fa-google" style="color: red"></i>  Google</a></div>
+		<div class="fb"><i class="fab fa-facebook" style="color: blue"></i>  Facebook</div>
 	</div>
 </form>
 </body>

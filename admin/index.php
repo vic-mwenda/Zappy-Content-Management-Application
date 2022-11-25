@@ -3,6 +3,11 @@ include '../google_auth.php';
 ?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
 <style media="screen">
 		*,
@@ -30,22 +35,17 @@ include '../google_auth.php';
 			border-radius: 50%;
 		}
 		.shape:first-child{
-			background: linear-gradient(
-				#1845ad,
-				#23a2f6
-			);
+			background:#000000;
 			left: -80px;
 			top: -80px;
 		}
 		.shape:last-child{
-			background: linear-gradient(
-				to right,
-				#ff512f,
-				#f09819
-			);
+			background:#6C63FF;
 			right: -30px;
 			bottom: -80px;
 		}
+
+
 		form{
 			height: 520px;
 			width: 400px;
@@ -61,11 +61,18 @@ include '../google_auth.php';
 			padding: 50px 35px;
 		}
 		form *{
-			font-family: 'Poppins',sans-serif;
+			font-family: 'EB Garamond', serif;
 			color: #1e1e1e;
 			letter-spacing: 0.5px;
 			outline: none;
 			border: none;
+		}
+
+		form h2{
+			font-size: 30px;
+			font-weight: 700;
+			color: #212529;
+			text-align: center;
 		}
 		form h3{
 			font-size: 32px;
@@ -136,9 +143,7 @@ include '../google_auth.php';
 	<div class="shape"></div>
 </div>
 <form method="POST" action="adminlogin.php">
-
-	<h3>Login Here</h3>
-
+	<a href="../index.php?"><h2>ZAPPY</h2></a>
 	<label for="username">Username</label>
 
 	<input name="user_name" type="text" class="form-control" id="username" placeholder="Enter Username" required>
@@ -149,8 +154,8 @@ include '../google_auth.php';
 	<button name="login" type="submit">Log In</button>
 	<a href="admin_register.php?" style="padding-top: 20px;text-align: center">do not have account register now?</a>
 	<div class="social">
-		<div class="go"><a href="<?php echo $client->createAuthUrl()?>"><i class="fab fa-google"></i> Google</a> </div>
-		<div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+		<div class="go"><a href="<?php echo $client->createAuthUrl()?>"><i class="fab fa-google" style="color: red"></i>Google</a></div>
+		<div class="fb"><i class="fab fa-facebook" style="color: blue"></i>Facebook</div>
 	</div>
 </form>
 </body>

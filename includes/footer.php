@@ -86,7 +86,7 @@
 					</div>
 
 					<div class="credits">
-						Built by <a href="https://devic.info/">Devic Developer</a>
+						Powered by <a href="https://devic.info/">Devic Developer</a>
 					</div>
 
 				</div>
