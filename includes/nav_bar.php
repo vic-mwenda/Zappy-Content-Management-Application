@@ -7,7 +7,11 @@
 
 		<nav id="navbar" class="navbar">
 			<ul>
-				<li><a href="index.php?">Blog</a></li>
+				<?php
+				if (isset($_SESSION['username'])) {
+				?>
+				<li><a href="admin/publishnews.php?">Write</a></li>
+				<?php }?>
 				<?php
 				$query = "SELECT * FROM `posts` WHERE id=34 ORDER BY updated_on DESC";
 				$run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
@@ -15,29 +19,22 @@
 				while ($row = mysqli_fetch_assoc($run_query)) {
 					$post_id = $row['id'];
 				if ($post_status='published'){
-				?><li><a href="single-post.php?post=<?php echo $post_id;?>">Single Post</a></li>
+				?><li><a href="single-post.php?post=<?php echo $post_id;?>">Read</a></li>
 				<?php }
 					  else{ echo "No content posts";}}}
 					  ?>
 
-				<li class="dropdown"><a href=""><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+				<li class="dropdown"><a href=""><span>Topics</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
 					<ul>
-						<?php
-						$query = "SELECT tag FROM `posts` LIMIT 5";
-						$run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
-						$num_rows = mysqli_num_rows($run_query);
-						if ( $num_rows > 0) {
-
-						while ($row = mysqli_fetch_assoc($run_query)) {
-						$post_tag = $row['tag'];
-						if (is_string($post_tag)){
-						?><li><a href="category.php?category=<?php echo $post_tag?>" style="text-transform: lowercase;"><?php echo $post_tag?></a></li>
-						<?php }
-					  else{ echo "No categories";}}}
-					  ?>
+						<li><a href="category.php?category=programming" style="text-transform: lowercase;">Programming</a></li>
+						<li><a href="category.php?category=artificial intelligence" style="text-transform: lowercase;">artificial intelligence</a></li>
+						<li><a href="category.php?category=machine learning" style="text-transform: lowercase;">machine learning</a></li>
+						<li><a href="category.php?category=networking" style="text-transform: lowercase;">networking</a></li>
+						<li><a href="category.php?category=data science" style="text-transform: lowercase;">data science</a></li>
+						<li><a href="category.php?category=computer hardware" style="text-transform: lowercase;">computer hardware</a></li>
 					</ul>
 
-				<li><a href="about.php?">About</a></li>
+				<li><a href="about.php?">Our Story</a></li>
 
 				<li style="display: none">
 					<a class=" js-search-open"><span class=""></a>

@@ -12,7 +12,7 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                         <div class="col-xs-4">
-            <a href="publishnews.php" class="btn btn-primary">Add New</a>
+            <a href="publishpost.php" class="btn btn-primary">Add New</a>
             </div>
                             ALL POSTS
                         </h1>
@@ -65,7 +65,7 @@ while ($row = mysqli_fetch_array($run_query)) {
     echo "<td>$post_author</td>";
     echo "<td>$post_title</td>";
     echo "<td>$post_status</td>";
-    echo "<td><img  width='100' src='../allpostpics/$post_image' alt='Post Image' ></td>";
+    echo "<td><img  width='100' src='../assets/img/Posts/$post_image' alt='Post Image' ></td>";
     echo "<td>$post_tags</td>";
     echo "<td>$post_date</td>";
     echo "<td><a href='post.php?post=$post_id' style='color:green'>See Post</a></td>";
@@ -79,7 +79,7 @@ while ($row = mysqli_fetch_array($run_query)) {
 }
 else {
     echo "<script>alert('Not any news yet! Start Posting now');
-    window.location.href= 'publishnews.php';</script>";
+    window.location.href= 'publishpost.php';</script>";
 }
 ?>
 
@@ -181,7 +181,7 @@ while ($row = mysqli_fetch_array($run_query)) {
 }
 else {
     echo "<script>alert('You have not posted any news yet! Start Posting now');
-    window.location.href= 'publishnews.php';</script>";
+    window.location.href= 'publishpost.php';</script>";
 }
 ?>
 
@@ -276,7 +276,7 @@ while ($row = mysqli_fetch_array($run_query)) {
 }
 else {
     echo "<script>alert('You have not posted any news yet! Start Posting now');
-    window.location.href= 'publishnews.php';</script>";
+    window.location.href= 'publishpost.php';</script>";
 }
 ?>
  </tbody>

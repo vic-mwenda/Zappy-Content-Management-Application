@@ -110,7 +110,7 @@ window.location.href = 'editposts.php?id=$id';</script>";
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            UPDATE NEWS
+                            Update post
                         </h1>
                         <form role="form" action="" method="POST" enctype="multipart/form-data">
 

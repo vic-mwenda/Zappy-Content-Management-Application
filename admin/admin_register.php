@@ -61,13 +61,13 @@ if (isset($_POST['add'])) {
   ------------------------
 
   Please click this link to activate your account:
-  http://localhost/Zappy/email-confirmation.php?email='.$email.'&hash='.$hash.''; // Our message above including the link
+  http://localhost/Zappy/verify.php?email='.$email.'&hash='.$hash.''; // Our message above including the link
 
-			$headers = 'From:noreply@zappy' . "\r\n"; // Set from headers
+			$headers = 'From:noreply@localhost' . "\r\n"; // Set from headers
 			mail($to, $subject, $message, $headers); // Send our email
 		}
 		else {
-			echo "<script>alert('An error occured, Try again!');</script>";
+			echo "<script> alert('An error occured, Try again!'); </script>";
 		}
 	}
 }

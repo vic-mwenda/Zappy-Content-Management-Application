@@ -136,7 +136,7 @@ else {
 <hr>
 
 
-<button type="submit" name="update" class="btn btn-primary" value="Update User">Update User</button>
+<button type="submit" name="update" class="btn btn-primary" value="Update User">Update Profile</button>
 
                     </div>
                 </div>

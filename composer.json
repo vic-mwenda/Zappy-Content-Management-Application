@@ -11,5 +11,8 @@
 	"homepage": "https://devic.info",
 	"autoload": {
 		"files": ["index.php"]
+	},
+	"require": {
+		"phpmailer/phpmailer": "^6.6"
 	}
 }

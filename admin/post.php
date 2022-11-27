@@ -47,7 +47,7 @@ while ($row = mysqli_fetch_array($run_query)) {
                 <p><h3>by <a href="#"><?php echo $post_author; ?></a></h3></p>
                 <p><span class="glyphicon glyphicon-time"></span>Posted on <?php echo $post_date; ?></p>
                 <hr>
-                <img class="img-responsive img-rounded" src="../allpostpics/<?php echo $post_image; ?>" alt="900 * 300">
+                <img class="img-responsive img-rounded" src="../assets/img/Posts/<?php echo $post_image; ?>" alt="900 * 300">
                 <hr>
                 <p><?php echo $post_content; ?></p>
 

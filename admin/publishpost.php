@@ -72,7 +72,7 @@ echo "<script>alert('Image size is not proper');</script>";
             $query = "INSERT INTO posts (title,author,postdate,image,content,status,tag) VALUES ('$post_title' , '$post_author' , '$post_date' , '$picture' , '$post_content' , '$post_status', '$post_tag') ";
             $result = mysqli_query($conn , $query) or die(mysqli_error($conn));
             if (mysqli_affected_rows($conn) > 0) {
-                echo "<script> alert('News posted successfully.It will be published after admin approves it');
+                echo "<script> alert('Content posted successfully.It will be published after admin approves it');
                 window.location.href='posts.php';</script>";
             }
             else {
@@ -88,7 +88,7 @@ echo "<script>alert('Image size is not proper');</script>";
 
     <div class="form-group">
         <label for="post_title">Post Title</label>
-        <input type="text" name="title" placeholder = "ENTER TITLE " value= "<?php if(isset($_POST['publish'])) { echo $post_title; } ?>"  class="form-control" required>
+        <input type="text" name="title" placeholder = "Enter title " value= "<?php if(isset($_POST['publish'])) { echo $post_title; } ?>"  class="form-control" required>
     </div>
 
 
@@ -98,7 +98,14 @@ echo "<script>alert('Image size is not proper');</script>";
     </div>
     <div class="form-group">
         <label for="post_tag">Post Tags</label>
-        <input type="text" name="tags" placeholder = "ENTER SOME TAGS SEPERATED BY COMMA (,)" value= "<?php if(isset($_POST['publish'])) { echo $post_tag; } ?>" class="form-control" >
+		<select id="post_tag" name="tags" placeholder = "Pick a category for the post " value= "<?php if(isset($_POST['publish'])) { echo $post_tag; } ?>" class="form-control">
+			<option value="Computer Hardware">Computer Hardware</option>
+			<option value="Programming">Programming</option>
+			<option value="Networking">Networking</option>
+			<option value="Artificial Intelligence">Artificial Intelligence</option>
+			<option value="Machine Learning">Machine Learning</option>
+			<option value="Data Science">Data Science</option>
+		</select>
     </div>
     <div class="form-group">
         <label for="post_content">Post Content</label>
