@@ -10,7 +10,7 @@
 				<?php
 				if (isset($_SESSION['username'])) {
 				?>
-				<li><a href="admin/publishnews.php?">Write</a></li>
+				<li><a href="admin/publishpost.php?">Write</a></li>
 				<?php }?>
 				<?php
 				$query = "SELECT * FROM `posts` WHERE id=34 ORDER BY updated_on DESC";
@@ -44,9 +44,6 @@
 
 			<div class="dropdown user-icon">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user "></i><b class="caret"></b></a>
-
-
-
 				<ul class="dropdown-menu">
 					<?php
 					if (isset($_SESSION['username'])) {

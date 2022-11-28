@@ -1,6 +1,12 @@
 <?php
  require __DIR__.'/includes/connection.php';
  include '../google_auth.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+include '../PHPMailer-master/src/Exception.php';
+include '../PHPMailer-master/src/PHPMailer.php';
+include '../PHPMailer-master/src/SMTP.php';
 
 
 if (isset($_POST['add'])) {
@@ -45,26 +51,41 @@ if (isset($_POST['add'])) {
 		$result = mysqli_query($conn , $query) or die(mysqli_error($conn));
 		if (mysqli_affected_rows($conn) > 0) {
 
-			echo "<script>alert('REGISTERED SUCCESSFULLY');
-      	window.location.href='../email-confirmation.php';</script>";
+
+			$hash =md5(rand(1000,5000));
+			$mail = new PHPMailer(true);
+			$mail -> isSMTP();
+			$mail -> Host ='smtp.gmail.com';
+			$mail -> SMTPAuth = true;
+			$mail -> Username = 'mwendav6@gmail.com';
+			$mail -> Password = 'jfpvjscxwdgzkxdo';
+			$mail -> SMTPSecure = 'ssl';
+			$mail -> Port = 465;
+			$mail -> setFrom('mwendav6@gmail.com');
+			$mail -> addAddress($_POST['email']);
+			$mail -> isHTML(true);
+			$mail -> Subject = 'Signup | Verification';
+			$mail -> Body =
+				'
+  Thanks for signing up!Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below. <br>
+  ------------------------ <br>
+  Username: '.$username.' <br>
+  Password: '.$password.' <br>
+  ------------------------
+<br><br>
+
+  Please click this link to activate your account: <br>
+  <a href="http://dry-tor-98820.herokuapp.com/verify.php?email='.$email.'&hash='.$hash.'">http://localhost/Zappy/verify.php?email='.$email.'&hash='.$hash.'</a>'; // Our message above including the link
 
 			//send verification email
-			$hash =md5(rand(1000,5000));
 
-			$to      = $email; // Send email to our user
-			$subject = 'Signup | Verification'; // Give the email a subject
-			$message = '
-  Thanks for signing up!Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
-  ------------------------
-  Username: '.$username.'
-  Password: '.$password.'
-  ------------------------
-
-  Please click this link to activate your account:
-  http://localhost/Zappy/verify.php?email='.$email.'&hash='.$hash.''; // Our message above including the link
-
-			$headers = 'From:noreply@localhost' . "\r\n"; // Set from headers
-			mail($to, $subject, $message, $headers); // Send our email
+			$mail -> send();
+			if ($mail!= true){
+				echo "<script> alert('An error occured, Try again!'); </script>";
+			}else {
+				echo "<script>alert('REGISTERED SUCCESSFULLY');
+      	window.location.href='../email-confirmation.php';</script>";
+			}
 		}
 		else {
 			echo "<script> alert('An error occured, Try again!'); </script>";

@@ -18,21 +18,25 @@ if (isset($_POST['login'])) {
 			$lastname = $row['lastname'];
 			$email = $row['email'];
 			$role = $row['role'];
-			$image = $row['image'];
-			if (password_verify($password, $pass)) {
+			$active = $row['active'];
+			if (password_verify($password, $pass)&& $active == 1) {
 				$_SESSION['id'] = $id;
 				$_SESSION['username'] = $user;
 				$_SESSION['firstname'] = $firstname;
 				$_SESSION['lastname'] = $lastname;
 				$_SESSION['email'] = $email;
 				$_SESSION['role'] = $role;
-				$_SESSION['image'] = $image;
+				$_SESSION['active'] = $active;
 				header('location: dashboard.php');
-			} else {
-				echo "<script>alert('invalid username/password');
-			window.location.href= '../index.php';</script>";
-
+			} elseif($active == 0) {
+				echo "<script>alert('inactive account');
+			window.location.href= '../activate_account.php';</script>";
 			}
+			else{
+				echo "<script>alert('Invalid username/password');
+			window.location.href= '../index.php';</script>";
+			}
+
 		}
 	} else {
 		echo "<script>alert('invalid username/password');

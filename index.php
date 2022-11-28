@@ -191,7 +191,7 @@
 			  <div class="row">
 				  <div class="col-md-9 order-md-2">
 					  <?php
-					  $query = "SELECT * FROM `posts` WHERE id=40;";
+					  $query = "SELECT * FROM `posts` WHERE id=32;";
 					  $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
 					  $num_rows = mysqli_num_rows($run_query);
 

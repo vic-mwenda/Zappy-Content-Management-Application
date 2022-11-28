@@ -4,6 +4,7 @@
 
 <?php include 'includes/nav_bar.php';?>
 
+
 <style>
 	.email-confirmation{
 		margin-top: 200px;
