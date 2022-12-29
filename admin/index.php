@@ -1,6 +1,6 @@
 <?php
-include '../google_auth.php';
-?>
+//include 'google_auth.php';
+//?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login</title>
@@ -18,7 +18,7 @@ include '../google_auth.php';
 			box-sizing: border-box;
 		}
 		body{
-			background-color: #dddddd;
+			background-color: #edf2f4;
 		}
 		.background{
 			width: 430px;
@@ -35,12 +35,12 @@ include '../google_auth.php';
 			border-radius: 50%;
 		}
 		.shape:first-child{
-			background:#000000;
+			background:#012970;
 			left: -80px;
 			top: -80px;
 		}
 		.shape:last-child{
-			background:#6C63FF;
+			background:#000000;
 			right: -30px;
 			bottom: -80px;
 		}
@@ -69,9 +69,10 @@ include '../google_auth.php';
 		}
 
 		form h2{
-			font-size: 30px;
+			font-size: 20px;
 			font-weight: 700;
-			color: #212529;
+			color: #012970;
+			font-family: "EB Garamond",serif;
 			text-align: center;
 		}
 		form h3{
@@ -142,7 +143,7 @@ include '../google_auth.php';
 	<div class="shape"></div>
 	<div class="shape"></div>
 </div>
-<form method="POST" action="adminlogin.php">
+<form method="POST" action="adminlogin.php?">
 	<a href="../index.php?"><h2>ZAPPY</h2></a>
 	<label for="username">Username</label>
 

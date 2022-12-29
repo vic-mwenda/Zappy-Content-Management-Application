@@ -5,41 +5,39 @@
 <?php include 'includes/header.php';?>
 
 <?php include 'includes/nav_bar.php';?>
+<?php
+if(!isset($_SESSION['username'])) {
+	?>
+	<!-- ======= Hero Slider Section ======= -->
+	<section id="hero" class="hero">
+		<div class="container-fluid" style="margin-top: 50px" data-aos="fade-in">
+			<div class="row">
+				<div class="col-sm-6 col-lg-6 justify-content-center">
+					<h2 class="d-flex justify-content-center">
+						Stay Curious
+					</h2>
+					<h4 class="d-flex justify-content-center">
+						Discover Stories,thinking and expertise from writers <br>
+						on any tech topic.
+					</h4>
+					<a href="admin/index.php" style="color: white">
+						<div class="btn-get-started">
+							Get Started
+						</div>
+					</a>
+				</div>
+				<div class="col-6 hero-illustration">
+					<img src="assets/img/hero-illustration-2.svg" alt="illustration"
+						 class="img-fluid d-flex justify-content-center">
+				</div>
+	</section>
+	<?php
+}else{
+	?>
+	<section class="hero" style="display: none"></section>
+<?php }?>
 
-
-  <main id="main">
-	  <?php
-	  if(!isset($_SESSION['username'])) {
-		  ?>
-		  <!-- ======= Hero Slider Section ======= -->
-		  <section id="hero" class="hero">
-			  <div class="container-fluid" data-aos="fade-in">
-				  <div class="row">
-					  <div class="col-sm-6 col-lg-6 justify-content-center">
-						  <h2 class="d-flex justify-content-center">
-							  Stay Curious
-						  </h2>
-						  <h4 class="d-flex justify-content-center">
-							  Discover Stories,thinking and expertise from writers <br>
-							  on any tech topic.
-						  </h4>
-						  <a href="admin/index.php" style="color: white">
-							  <div class="btn-get-started">
-								  Get Started
-							  </div>
-						  </a>
-					  </div>
-					  <div class="col-6 hero-illustration">
-						  <img src="assets/img/hero-illustration-2.svg" alt="illustration"
-							   class="img-fluid d-flex justify-content-center">
-					  </div>
-		  </section>
-		  <?php
-	  }else{
-	  	?>
-	  <section class="hero" style="display: none"></section>
-	  <?php }?>
-
+  <main id="main" class="container" style="background-color:white">
     <section id="posts" class="posts">
       <div class="container" data-aos="fade-up">
 
@@ -71,17 +69,22 @@
 
 			  ?>
             <div class="post-entry-1 lg">
-              <a href="single-post.php?post=<?php echo $post_id; ?>"><img src="assets/img/Posts/<?php echo $post_image ?>" alt="" class="img-fluid"></a>
-              <div class="post-meta"><span class="date"><a href="category.php?category=<?php echo $post_tags?>"> <span> <?php echo $post_tags; ?></span> </a>  <span class="mx-1">&bullet;</span> <span><?php echo $post_date; ?></span></div>
-              <h2><a href="single-post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h2>
+				<div class="post-meta"><span class="date"><a href="category.php?category=<?php echo $post_tags?>"> <span > <?php echo $post_tags; ?></span> </a>  <span class="mx-1">&bullet;</span> <span ><?php echo $post_date; ?></span></div>
+				<a href="single-post.php?post=<?php echo $post_id; ?>"><img src="assets/img/Posts/<?php echo $post_image ?>" alt="" class="img-fluid"></a>
+              <h3><a href="single-post.php?post=<?php echo $post_id; ?>"><?php echo $post_title; ?></a></h3>
               <p class="mb-4 d-block"><?php echo substr($post_content, 0, 300) . '.........'; ?></p>
 
-              <div class="d-flex align-items-center author">
-                <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div>
-                <div class="name">
-                  <h3 class="m-0 p-0"><?php echo $post_author; ?></h3>
-                </div>
-              </div>
+				<div class="d-flex align-items-center author">
+					<div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div>
+					<div class="name"><h4 class="m-0 p-0"><?php echo $post_author; ?></h4></div>
+					<div class="like">
+						<img src="assets/img/icons/like-svgrepo-com.svg" alt="like button">
+						<h5>54</h5>
+					</div>
+					<div class="share">
+						<img src="assets/img/icons/share-arrow-svgrepo-com.svg" alt="share button">
+					</div>
+				</div>
             </div>
 		  </div>
 			  <?php }?>
@@ -107,9 +110,20 @@
 							if ($post_status='published'){
 								?>
 								<div class="post-entry-1">
-									<a href="single-post.php?post=<?php echo $post_id;?>"><img src="assets/img/Posts/<?php echo $post_image?>" alt="" class="img-fluid"></a>
 									<div class="post-meta"><a href="category.php?category=<?php echo $post_tags?>"><span class="date"><?php echo $post_tags;?></span></a> <span class="mx-1">&bullet;</span> <span><?php echo $post_date;?></span></div>
-									<h2><a href="single-post.php?post=<?php echo $post_id;?>"><?php echo $post_title;?></a></h2>
+									<a href="single-post.php?post=<?php echo $post_id;?>"><img src="assets/img/Posts/<?php echo $post_image?>" alt="" class="img-fluid"></a>
+									<h3><a href="single-post.php?post=<?php echo $post_id;?>"><?php echo $post_title;?></a></h3>
+									<div class="d-flex align-items-center author">
+										<div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div>
+										<div class="name"><h4 class="m-0 p-0"><?php echo $post_author; ?></h4></div>
+										<div class="like">
+											<img src="assets/img/icons/like-svgrepo-com.svg" alt="like button">
+											<h5>54</h5>
+										</div>
+										<div class="share">
+											<img src="assets/img/icons/share-arrow-svgrepo-com.svg" alt="share button">
+										</div>
+									</div>
 								</div>
 							<?php }
 							else{ echo "No Latest posts";}}}
@@ -132,9 +146,21 @@
 						  if ($post_status='published'){
 					  	?>
 					  <div class="post-entry-1">
-						  <a href="single-post.php?post=<?php echo $post_id;?>"><img src="assets/img/Posts/<?php echo $post_image?>" alt="" class="img-fluid"></a>
 						  <div class="post-meta"><a href="category.php?category=<?php echo $post_tags?>"><span class="date"><?php echo $post_tags;?></span></a> <span class="mx-1">&bullet;</span> <span><?php echo $post_date;?></span></div>
-						  <h2><a href="single-post.php?post=<?php echo $post_id;?>"><?php echo $post_title;?></a></h2>
+						  <a href="single-post.php?post=<?php echo $post_id;?>"><img src="assets/img/Posts/<?php echo $post_image?>" alt="" class="img-fluid"></a>
+						  <h3><a href="single-post.php?post=<?php echo $post_id;?>"><?php echo $post_title;?></a></h3>
+
+						  <div class="d-flex align-items-center author">
+							  <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div>
+							  <div class="name"><h4 class="m-0 p-0"><?php echo $post_author; ?></h4></div>
+							  <div class="like">
+								  <img src="assets/img/icons/like-svgrepo-com.svg" alt="like button">
+								  <h5>54</h5>
+							  </div>
+							  <div class="share">
+								  <img src="assets/img/icons/share-arrow-svgrepo-com.svg" alt="share button">
+							  </div>
+						  </div>
 					  </div>
 					  <?php }
 					  else{ echo "No Latest posts";}}}
@@ -183,7 +209,7 @@
 	  <section class="posts">
 		  <div class="container" data-aos="fade-up">
 
-			  <div class="section-header d-flex justify-content-between align-items-center mb-5">
+			  <div class="section-header d-flex justify-content-between align-items-center mb-5" >
 				  <h2>Networking</h2>
 				  <div><a href="category.php?category=networking" class="more">See All Networking</a></div>
 			  </div>
@@ -207,7 +233,7 @@
 					  $post_tags = $row['tag'];
 					  ?>
 
-					  <div class="d-lg-flex post-entry-2">
+					  <div class="d-lg-flex post-entry-1">
 						  <a href="single-post.php?post=<?php echo $post_id?>" class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
 							  <img src="assets/img/Posts/<?php echo $post_image?>" alt="" class="img-fluid">
 						  </a>
@@ -215,10 +241,16 @@
 							  <div class="post-meta"><span class="date"><?php echo $post_tags?></span> <span class="mx-1">&bullet;</span> <span><?php echo $post_date?></span></div>
 							  <h3><a href="single-post.php?post=<?php echo $post_id?>"><?php echo $post_title?></a></h3>
 							  <p><?php echo substr($post_content,0,300)?></p>
+
 							  <div class="d-flex align-items-center author">
-								  <div class="photo"><img src="assets/img/person-4.jpg" alt="" class="img-fluid"></div>
-								  <div class="name">
-									  <h3 class="m-0 p-0"><?php echo $post_author?></h3>
+								  <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div>
+								  <div class="name"><h4 class="m-0 p-0"><?php echo $post_author; ?></h4></div>
+								  <div class="like">
+									  <img src="assets/img/icons/like-svgrepo-com.svg" alt="like button">
+									  <h5>54</h5>
+								  </div>
+								  <div class="share">
+									  <img src="assets/img/icons/share-arrow-svgrepo-com.svg" alt="share button">
 								  </div>
 							  </div>
 						  </div>
@@ -241,11 +273,22 @@
 								  if ($post_status='published'){
 
 								  ?>
-									  <div class="post-entry-1 border-bottom">
+									  <div class="post-entry-1 ">
 								  <div class="post-meta"><span class="date"><?php echo $post_tags?></span> <span class="mx-1">&bullet;</span> <span><?php echo $post_date?></span></div>
-								  <h2 class="mb-2"><a href="single-post.html"><?php echo $post_title?></a></h2>
-								  <span class="author mb-3 d-block">Jenny Wilson</span>
-							  </div>
+								  <h3 class="mb-2"><a href="single-post.html"><?php echo $post_title?></a></h3>
+
+										  <div class="d-flex align-items-center author">
+											  <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div>
+											  <div class="name"><h4 class="m-0 p-0"><?php echo $post_author; ?></h4></div>
+											  <div class="like">
+												  <img src="assets/img/icons/like-svgrepo-com.svg" alt="like button">
+												  <h5>54</h5>
+											  </div>
+											  <div class="share">
+												  <img src="assets/img/icons/share-arrow-svgrepo-com.svg" alt="share button">
+											  </div>
+										  </div>
+									  </div>
 							  <?php }
 							  else{ echo "No Latest posts";}}}
 							  ?>
@@ -255,8 +298,19 @@
 							  <div class="post-entry-1">
 								  <a href="single-post.html"><img src="assets/img/post-landscape-7.jpg" alt="" class="img-fluid"></a>
 								  <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-								  <h2 class="mb-2"><a href="single-post.html">How to Avoid Distraction and Stay Focused During Video Calls?</a></h2>
-								  <span class="author mb-3 d-block">Jenny Wilson</span>
+								  <h3 class="mb-2"><a href="single-post.html">How to Avoid Distraction and Stay Focused During Video Calls?</a></h3>
+
+								  <div class="d-flex align-items-center author">
+									  <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div>
+									  <div class="name"><h4 class="m-0 p-0"><?php echo $post_author; ?></h4></div>
+									  <div class="like">
+										  <img src="assets/img/icons/like-svgrepo-com.svg" alt="like button">
+										  <h5>54</h5>
+									  </div>
+									  <div class="share">
+										  <img src="assets/img/icons/share-arrow-svgrepo-com.svg" alt="share button">
+									  </div>
+								  </div>
 								  <p class="mb-4 d-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero temporibus repudiandae, inventore pariatur numquam cumque possimus</p>
 							  </div>
 						  </div>
@@ -278,10 +332,21 @@
 
 					  if ($post_status = "published"){
 					  ?>
-					  <div class="post-entry-1 border-bottom">
-						  <div class="post-meta"><span class="date"><a href="category.php?category=<?php echo $post_tags?>"><?php echo $post_tags?></a></span> <span class="mx-1">&bullet;</span> <span><?php echo $post_date?></span></div>
-						  <h2 class="mb-2"><a href="single-post.php?post=<?php echo $post_id?>"><?php echo $post_title?></a></h2>
-						  <span class="author mb-3 d-block"><?php echo $post_author?></span>
+					  <div class="post-entry-1">
+						  <div class="post-meta"><span class="date"><a href="category.php?category=<?php echo $post_tags?>"><?php echo $post_tags?></a></span> <span class="mx-1">&bullet;</span> <span style="color: #8d99ae"><?php echo $post_date?></span></div>
+						  <h3 class="mb-2"><a href="single-post.php?post=<?php echo $post_id?>"><?php echo $post_title?></a></h3>
+
+						  <div class="d-flex align-items-center author">
+							  <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div>
+							  <div class="name"><h4 class="m-0 p-0"><?php echo $post_author; ?></h4></div>
+							  <div class="like">
+								  <img src="assets/img/icons/like-svgrepo-com.svg" alt="like button">
+								  <h5>54</h5>
+							  </div>
+							  <div class="share">
+								  <img src="assets/img/icons/share-arrow-svgrepo-com.svg" alt="share button">
+							  </div>
+						  </div>
 					  </div>
 					  <?php }
 					  else{

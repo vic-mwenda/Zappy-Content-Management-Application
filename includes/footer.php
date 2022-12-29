@@ -79,26 +79,10 @@
 	<div class="footer-legal">
 		<div class="container">
 
-			<div class="row justify-content-between">
-				<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+			<div class="row ">
+				<div class="col-12 d-flex justify-content-center mb-3 mb-md-0">
 					<div class="copyright">
-						© Copyright <strong><span>2022</span></strong>. All Rights Reserved
-					</div>
-
-					<div class="credits">
-						Powered by <a href="https://devic.info/">Devic Developer</a>
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="social-links mb-3 mb-lg-0 text-center text-md-end">
-						<a href="https://twitter.com/devic_co" class="twitter"><i class="bi bi-twitter"></i></a>
-						<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-						<a href="https://github.com/vic-mwenda" class="instagram"><i class="bi bi-github"></i></a>
-						<a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-						<a href="https://www.linkedin.com/in/victor-mwenda-5b2b1219a/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-
+						Copyright © <strong><span>2022 </span></strong>.Zappy. All rights reserved.
 					</div>
 
 				</div>

@@ -5,6 +5,7 @@
 
 body {
   color: rgba(var(--color-primary-rgb), 1);
+	background-color: #edf2f4;
 }
 
 a {
@@ -27,7 +28,65 @@ h6 {
 }
 
 #main {
-  margin-top: 90px;
+  margin-top: 40px;
+}
+#main h2{
+	color: #012970;
+	font-family: "EB Garamond" , serif;
+	font-size: 24px;
+	text-transform: uppercase;
+
+}
+
+/*override custom dropdown settings*/
+.dropdown-menu {
+	border-radius: 4px;
+	padding: 10px 0;
+	-webkit-animation-name: dropdown-animate;
+	animation-name: dropdown-animate;
+	-webkit-animation-duration: 0.2s;
+	animation-duration: 0.2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	border: 0;
+	box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
+}
+
+.dropdown-menu .dropdown-header,
+.dropdown-menu .dropdown-footer {
+	text-align: center;
+	font-size: 15px;
+	padding: 10px 25px;
+}
+
+.dropdown-menu .dropdown-footer a {
+	color: #444444;
+	text-decoration: underline;
+}
+
+.dropdown-menu .dropdown-footer a:hover {
+	text-decoration: none;
+}
+
+.dropdown-menu .dropdown-divider {
+	color: #a5c5fe;
+	margin: 0;
+}
+
+.dropdown-menu .dropdown-item {
+	font-size: 14px;
+	padding: 10px 15px;
+	transition: 0.3s;
+}
+
+.dropdown-menu .dropdown-item i {
+	margin-right: 10px;
+	font-size: 18px;
+	line-height: 0;
+}
+
+.dropdown-menu .dropdown-item:hover {
+	background-color: #f6f9ff;
 }
 
 /*--------------------------------------------------------------
@@ -117,7 +176,7 @@ section {
 .hero{
 	height: 10cm;
 	width:100%;
-	background:#f2f2f2 ;
+	background:#edf2f4 ;
 	border-top: 1px black solid;
 	border-bottom: 1px black solid;
 }
@@ -162,68 +221,29 @@ section {
 --------------------------------------------------------------*/
 
 .header {
-  height: 90px;
-  transition: all 0.5s;
-  z-index: 997;
-  background: #f2f2f2;
+	transition: all 0.5s;
+	z-index: 997;
+	height: 60px;
+	box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+	background-color: #fff;
+	padding-left: 20px;
 }
 
 .header.sticked {
   height: 70px;
 }
 
-.header .logo img {
-  max-height: 40px;
-  margin-right: 6px;
+.logo img {
+	max-height: 26px;
+	margin-right: 6px;
 }
 
-.header .logo h1 {
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--color-default);
-  font-family: var(--font-primary);
+.logo span {
+	font-size: 26px;
+	font-weight: 700;
+	color: #012970;
+	font-family: "EB Garamond",serif;
 }
-.top-nav {
-	padding: 0 15px;
-}
-
-.top-nav li {
-	display: inline-block;
-	float: left;
-}
-
-.top-nav li a {
-	padding-top: 15px;
-	padding-bottom: 15px;
-	line-height: 20px;
-	color: #0d0d0d;
-}
-
-.top-nav>li>a:hover,
-.top-nav>li>a:focus,
-.top-nav>.open>a,
-.top-nav>.open>a:hover,
-.top-nav>.open>a:focus {
-	color: #fff;
-	background-color: #000;
-}
-
-.top-nav>.open>.dropdown-menu {
-	float: left;
-	position: absolute;
-	margin-top: 0;
-	border: 1px solid rgba(0,0,0,.15);
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
-	background-color: #fff;
-	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-	box-shadow: 0 6px 12px rgba(0,0,0,.175);
-}
-
-.top-nav>.open>.dropdown-menu>li>a {
-	white-space: normal;
-}
-
 
 
 section {
@@ -296,17 +316,16 @@ section {
   .navbar .dropdown ul {
     display: block;
     position: absolute;
-    left: 14px;
+    right: 1px;
     top: calc(100% + 30px);
     margin: 0;
     padding: 10px 0;
     z-index: 99;
     opacity: 0;
     visibility: hidden;
-    background: var(--color-white);
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+	  background-color: #fff;
     transition: 0.3s;
-    border-radius: 4px;
+	  color: black;
   }
 
   .navbar .dropdown ul li {
@@ -314,7 +333,6 @@ section {
   }
 
   .navbar .dropdown ul a {
-    padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
     font-weight: 400;
@@ -327,7 +345,7 @@ section {
   .navbar .dropdown ul a:hover,
   .navbar .dropdown ul .active:hover,
   .navbar .dropdown ul li:hover>a {
-    color: var(--color-primary);
+	  background-color: #f6f9ff;
   }
 
   .navbar .dropdown:hover>ul {
@@ -348,6 +366,8 @@ section {
     left: 100%;
     visibility: visible;
   }
+
+
 }
 
 @media (min-width: 1280px) and (max-width: 1366px) {
@@ -477,7 +497,8 @@ section {
 # Posts
 --------------------------------------------------------------*/
 .post-entry-1 {
-  margin-bottom: 30px;
+	margin-bottom: 10px;
+	border-bottom: black 0.5px solid;
 }
 
 .post-entry-1 img {
@@ -507,7 +528,7 @@ section {
   text-transform: uppercase;
   font-weight: 600;
   font-family: var(--font-secondary);
-  color: rgba(var(--color-black-rgb), 0.4);
+  color: #012970;
   margin-bottom: 10px;
 }
 
@@ -516,22 +537,52 @@ section {
     border: none !important;
   }
 }
+.author{
+	padding-bottom: 10px;
+}
 
 .author .photo {
   margin-right: 10px;
 }
 
 .author .photo img {
-  width: 40px;
+  width: 30px;
   border-radius: 50%;
   margin-bottom: 0;
+  padding-bottom: 5px;
 }
 
-.author .name h3 {
+.author .name h4 {
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
   font-size: 15px;
   font-family: var(--font-secondary);
+}
+.author .name h4:hover{
+	color: #012970;
+	cursor: pointer;
+}
+.author .like{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 10px;
+}
+.author .like h5{
+	margin-left: 5px;
+	font-size: 15px;
+	margin-top: 5px;
+}
+
+.author .like img{
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 30px;
+}
+.author .share img{
+	height: 30px;
+	margin-left: 15px;
+	margin-top: 30px;
 }
 
 .trending {

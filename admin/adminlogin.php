@@ -1,5 +1,5 @@
 <?php
-include('../includes/connection.php');
+include('includes/connection.php');
 session_start();
 
 if (isset($_POST['login'])) {
@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
 				$_SESSION['email'] = $email;
 				$_SESSION['role'] = $role;
 				$_SESSION['active'] = $active;
-				header('location: dashboard.php');
+				header('location: ../index.php');
 			} elseif($active == 0) {
 				echo "<script>alert('inactive account');
 			window.location.href= '../activate_account.php';</script>";

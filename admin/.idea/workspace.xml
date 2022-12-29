@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a425d91e-9e63-4ae4-89af-3b790739422a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/PHPMailer-master/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="2IiV5eXtt5OrVyiARPaQzy7kMRM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assets/img" />
+      <recent name="$PROJECT_DIR$/assets/img/Posts" />
+      <recent name="$PROJECT_DIR$/includes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/img" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a425d91e-9e63-4ae4-89af-3b790739422a" name="Default Changelist" comment="" />
+      <created>1670664226358</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670664226358</updated>
+      <workItem from="1670664273832" duration="777000" />
+      <workItem from="1670947919170" duration="1375000" />
+      <workItem from="1671132584155" duration="1807000" />
+      <workItem from="1671134439592" duration="1769000" />
+      <workItem from="1671136244144" duration="1504000" />
+      <workItem from="1671138177510" duration="1583000" />
+      <workItem from="1671139979380" duration="1761000" />
+      <workItem from="1671355178156" duration="1564000" />
+      <workItem from="1671356897265" duration="1737000" />
+      <workItem from="1671358730071" duration="886000" />
+      <workItem from="1671622430746" duration="1265000" />
+      <workItem from="1671624255873" duration="1880000" />
+      <workItem from="1671626187267" duration="1628000" />
+      <workItem from="1671627986453" duration="1787000" />
+      <workItem from="1671629855727" duration="1778000" />
+      <workItem from="1671631672150" duration="664000" />
+      <workItem from="1671635651528" duration="1137000" />
+      <workItem from="1671650115088" duration="1768000" />
+      <workItem from="1671656097710" duration="1783000" />
+      <workItem from="1671657911449" duration="1826000" />
+      <workItem from="1671660402564" duration="2084000" />
+      <workItem from="1671712368666" duration="1846000" />
+      <workItem from="1671714386861" duration="1691000" />
+      <workItem from="1671716155249" duration="2191000" />
+      <workItem from="1671718555502" duration="1678000" />
+      <workItem from="1671720332775" duration="1252000" />
+      <workItem from="1671722106481" duration="911000" />
+      <workItem from="1671731566055" duration="1431000" />
+      <workItem from="1671737659951" duration="1033000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="533" y="199" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1671133812735">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="533" y="199" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.900@0.0.1600.900" timestamp="1671133812735" />
+    <state x="583" y="207" width="424" height="479" key="FileChooserDialogImpl" timestamp="1670949297961">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="583" y="207" width="424" height="479" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1670949297961" />
+    <state x="618" y="375" width="354" height="147" key="NewPhpFileDialog" timestamp="1671622603583">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="618" y="375" width="354" height="147" key="NewPhpFileDialog/0.0.1600.900@0.0.1600.900" timestamp="1671622603583" />
+    <state x="483" y="276" key="com.intellij.ide.util.TipDialog" timestamp="1671737786630">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="483" y="276" key="com.intellij.ide.util.TipDialog/0.0.1600.900@0.0.1600.900" timestamp="1671737786630" />
+    <state x="464" y="203" key="run.anything.popup" timestamp="1671718719503">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="464" y="203" key="run.anything.popup/0.0.1600.900@0.0.1600.900" timestamp="1671718719503" />
+    <state x="463" y="193" width="672" height="678" key="search.everywhere.popup" timestamp="1671712773702">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="463" y="193" width="672" height="678" key="search.everywhere.popup/0.0.1600.900@0.0.1600.900" timestamp="1671712773702" />
+  </component>
+</project>

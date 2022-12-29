@@ -1,8 +1,9 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
 	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-		<a href="index.php" class="logo d-flex align-items-center">
-			<h1>Zappy</h1>
+		<a href="index.php?" class="logo d-flex align-items-center">
+			<img src="assets/img/zappy-logo-1.png" alt="">
+			<span class="d-none d-lg-block">Zappy</span>
 		</a>
 
 		<nav id="navbar" class="navbar">
@@ -10,7 +11,7 @@
 				<?php
 				if (isset($_SESSION['username'])) {
 				?>
-				<li><a href="admin/publishpost.php?">Write</a></li>
+				<li><a href="admin/add_post.php?">Write</a></li>
 				<?php }?>
 				<?php
 				$query = "SELECT * FROM `posts` WHERE id=34 ORDER BY updated_on DESC";
@@ -27,18 +28,32 @@
 				<li class="dropdown"><a href=""><span>Topics</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
 					<ul>
 						<li><a href="category.php?category=programming" style="text-transform: lowercase;">Programming</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
 						<li><a href="category.php?category=artificial intelligence" style="text-transform: lowercase;">artificial intelligence</a></li>
+						<liclass="dropdown-divider"></li>
 						<li><a href="category.php?category=machine learning" style="text-transform: lowercase;">machine learning</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
 						<li><a href="category.php?category=networking" style="text-transform: lowercase;">networking</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
 						<li><a href="category.php?category=data science" style="text-transform: lowercase;">data science</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
 						<li><a href="category.php?category=computer hardware" style="text-transform: lowercase;">computer hardware</a></li>
+
 					</ul>
 
 				<li><a href="about.php?">Our Story</a></li>
 
 				<li style="display: none">
 					<a class=" js-search-open"><span class=""></a>
-						<button class=" js-search-close"></button>
+					<button class=" js-search-close"></button>
 				</li>
 			</ul>
 
@@ -48,19 +63,35 @@
 					<?php
 					if (isset($_SESSION['username'])) {
 						?>
-						<li>
-							<a href="admin/profile.php"><i class="fa fa-fw fa-user"></i> <?php echo $_SESSION['username']?></a>
+						<li class="dropdown-header">
+							<h6><?php echo $_SESSION['username']?></h6>
+							<span><?php echo $_SESSION['role']?></span>
 						</li>
-						<li class="divider"></li>
 						<li>
-							<a href="admin/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+							<hr class="dropdown-divider">
+						</li>
+						<li>
+							<a class="dropdown-item d-flex align-items-center" href="admin/dashboard.php?"><i class="bi bi-person"></i> Dashboard</a>
+						</li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li>
+							<a class="dropdown-item d-flex align-items-center" href="admin/users-profile.php"><i class="bi bi-gear"></i> Account Settings</a>
+						</li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li>
+							<a class="dropdown-item d-flex align-items-center" href="admin/logout.php"><i class="bi bi-box-arrow-right"></i> Sign Out</a>
 						</li>
 						<?php
 					} else{
 						?>
 						<li>
-							<a href="admin/index.php"><i class="fa-solid fa-right-to-bracket"></i>Log In</a>
+							<a class="dropdown-item d-flex align-items-center" href="admin/index.php"><i class="fa-solid fa-right-to-bracket"></i>Sign In</a>
 						</li>
+
 						<?php
 					}
 					?>
@@ -74,14 +105,10 @@
 
 
 
-
 			<i class="bi bi-list mobile-nav-toggle"></i>
 
 			<!-- ======= Search Form ======= -->
 
 
 		</div>
-
-	</div>
-
 </header><!-- End Header -->

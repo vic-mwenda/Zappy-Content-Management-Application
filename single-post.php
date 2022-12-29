@@ -14,7 +14,7 @@ else {
     header('location: index.php');
 }?>
 
-  <main id="main">
+  <main id="main" class="container" style="background-color:white">
 
     <section class="single-post-content">
       <div class="container">

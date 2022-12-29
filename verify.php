@@ -17,10 +17,15 @@ alert("your account was created successfully");
 window.location.href="admin/index.php";
 </script>';
 	}else{
+		$query = "SELECT email,active FROM users WHERE email='".$email."'AND active='1'";
+		$run = mysqli_query($conn,$query);
+		$row = mysqli_num_rows($run);
+		if ($row > 0){
 		// No match -> invalid url or account has already been activated.
 		echo '<script>
-alert("There was an error creating your account");
+alert("Account active. Login Now");
+window.location.href="admin/index.php";
 </script>';
 	}
 
-}
+}}

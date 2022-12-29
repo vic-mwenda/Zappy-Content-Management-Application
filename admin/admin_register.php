@@ -1,16 +1,16 @@
 <?php
  require __DIR__.'/includes/connection.php';
- include '../google_auth.php';
+ include 'google_auth.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-include '../PHPMailer-master/src/Exception.php';
-include '../PHPMailer-master/src/PHPMailer.php';
-include '../PHPMailer-master/src/SMTP.php';
+include 'PHPMailer-master/src/Exception.php';
+include 'PHPMailer-master/src/PHPMailer.php';
+include 'PHPMailer-master/src/SMTP.php';
 
 
 if (isset($_POST['add'])) {
-	include "../GUMP-master/gump.class.php";
+	include "GUMP-master/gump.class.php";
 	$gump = new GUMP();
 	$_POST = $gump->sanitize($_POST);
 
