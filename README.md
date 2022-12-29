@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/img/zappy-logo-1.png" width="600" align="center"/>
+  <img src="assets/img/zappy-logo-1.png" style="width: 50px" align="center"/>
 </p>
 
 > Zappy is a PHP based Information Pool System (or simply a Social Media Website), consisting of a complete Login/Registration system, User Profile system and a blog management system.
