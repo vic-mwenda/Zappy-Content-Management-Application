@@ -1,7 +1,5 @@
 <?php include 'includes/header.php';?>
-        <!-- Navigation Bar -->
-   <?php include 'includes/nav_bar.php';?>
-        <!-- Navigation Bar -->
+<?php include 'includes/nav_bar.php';?>
 
     <div class="container">
         <div class="row" style="margin-top: 50px">
@@ -24,9 +22,6 @@
            # Functional Admin panel:  allows all admins to manage their content properly with admin panel  <br>
            # CRUD functionalities:  allows all users to create,read,update and delete their content in a managed format <br>
            # Profile update option: allows users to update their profile/account details <br>
-<!--            TODO:Secure registration and login option for users. <br>-->
-<!--            TODO:Trending news updates:  allows user to view all trending news around the world (using google news api) <br>-->
-<!--            TODO: Search news:  option for search all content.-->
            <br><br><br>
 
            Tools used:

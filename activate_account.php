@@ -1,12 +1,11 @@
 <?php
 include 'includes/header.php';
 include 'includes/nav_bar.php';
+include 'assets/vendor/PHPMailer-master/src/Exception.php';
+include 'assets/vendor/PHPMailer-master/src/PHPMailer.php';
+include 'assets/vendor/PHPMailer-master/src/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-include 'PHPMailer-master/src/Exception.php';
-include 'PHPMailer-master/src/PHPMailer.php';
-include 'PHPMailer-master/src/SMTP.php';
 
 ?>
 <head>

@@ -1,26 +1,12 @@
-/**
-* Template Name: ZenBlog - v1.1.0
-* Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
-* Author: BootstrapMade.com
-* License: https:///bootstrapmade.com/license/
-*/
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
-  /**
-   * Sticky header on scroll
-   */
   const selectHeader = document.querySelector('#header');
   if (selectHeader) {
     document.addEventListener('scroll', () => {
       window.scrollY > 100 ? selectHeader.classList.add('sticked') : selectHeader.classList.remove('sticked');
     });
   }
-
-  /**
-   * Mobile nav toggle
-   */
-
   const mobileNavToogleButton = document.querySelector('.mobile-nav-toggle');
 
   if (mobileNavToogleButton) {
@@ -35,10 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNavToogleButton.classList.toggle('bi-list');
     mobileNavToogleButton.classList.toggle('bi-x');
   }
-
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
   document.querySelectorAll('#navbar a').forEach(navbarlink => {
 
     if (!navbarlink.hash) return;
@@ -53,9 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /**
-   * Toggle mobile nav dropdowns
-   */
   const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
 
   navDropdowns.forEach(el => {
@@ -72,9 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   });
 
-  /**
-   * Scroll top button
-   */
   const scrollTop = document.querySelector('.scroll-top');
   if (scrollTop) {
     const togglescrollTop = function() {
@@ -87,57 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth'
     }));
   }
-
-  /**
-   * Hero Slider
-   */
-  var swiper = new Swiper(".sliderFeaturedPosts", {
-    spaceBetween: 0,
-    speed: 500,
-    centeredSlides: true,
-    loop: true,
-    slideToClickedSlide: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".custom-swiper-button-next",
-      prevEl: ".custom-swiper-button-prev",
-    },
-  });
-
-  /**
-   * Open and close the search form.
-   */
-  const searchOpen = document.querySelector('.js-search-open');
-  const searchClose = document.querySelector('.js-search-close');
-  const searchWrap = document.querySelector(".js-search-form-wrap");
-
-  searchOpen.addEventListener("click", (e) => {
-    e.preventDefault();
-    searchWrap.classList.add("active");
-  });
-
-  searchClose.addEventListener("click", (e) => {
-    e.preventDefault();
-    searchWrap.classList.remove("active");
-  });
-
-  /**
-   * Initiate glightbox
-   */
   const glightbox = GLightbox({
     selector: '.glightbox'
   });
 
-  /**
-   * Animation on scroll function and init
-   */
   function aos_init() {
     AOS.init({
       duration: 1000,

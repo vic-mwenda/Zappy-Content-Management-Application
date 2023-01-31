@@ -138,7 +138,7 @@ The notification icon at the right of the screen provides a realtime interface f
 * `Blog Management System`:
   * Blog creation
   * Choosing optional Blog cover image (there is a default image)
-  * `Like` system on blogs (users can either like the blog or remove their like)
+  * `Like` system on blogs (users can either like the blog or remove their like).Needs further improvement.
   * Deleting own blogs (admin can remove any)
 
 ### Login/Registration and User Authentication

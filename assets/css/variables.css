@@ -1,23 +1,18 @@
 
 /*--------------------------------------------------------------
-# 1. Zappy variables
+# 1. Zappy Application css variables
 --------------------------------------------------------------*/
 :root {
-
-  /* Fonts */
   --font-default: 'EB Garamond', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: 'EB Garamond', serif; /*'Playfair Display', serif;*/
   --font-secondary: 'Inter', sans-serif;
 
-  /* Default text color */
   --color-default: #212529;
   --color-default-rgb: 33, 37, 41;
 
-  /* Defult links color */
   --color-links: #212529;
   --color-links-hover: #15171a;
 
-  /* Primay colors */
   --color-primary: #212529;
   --color-primary-light: #26282c;
   --color-primary-dark: #0b0c0e;
@@ -26,7 +21,6 @@
   --color-primary-light-rgb: 38, 40, 44;
   --color-primary-dark-rgb: 11, 12, 14;
 
-  /* Secondary colors */
   --color-secondary: #596d80;
   --color-secondary-light: #8498aa;
   --color-secondary-dark: #404f5c;
@@ -35,7 +29,6 @@
   --color-secondary-light-rgb: 132, 152, 170;
   --color-secondary-dark-rgb: 64, 79, 92;
 
-  /* General colors */
   --color-blue: #0d6efd;
   --color-blue-rgb: 13, 110, 253;
 
@@ -66,7 +59,7 @@
   --color-cyan: #0dcaf0;
   --color-cyan-rgb: 13, 202, 240;
 
-  --color-white: #bbbbbb;
+  --color-white: #ffffff;
   --color-white-rgb: 255, 255, 255;
 
   --color-gray: #6c757d;
@@ -136,12 +129,10 @@
 /*--------------------------------------------------------------
 # 3. Set color and background class names
 --------------------------------------------------------------*/
-/* Fonts */
 .font-default { font-family: var(--font-default) !important; }
 .font-primary { font-family: var(--font-primary) !important;}
 .font-secondary { font-family: var(--font-secondary) !important; }
 
-/* Text Colors */
 .color-default { color: var(--color-default) !important; }
 .color-links { color: var(--color-links) !important; }
 .color-links:hover { color: var(--color-links-hover) !important; }

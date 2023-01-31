@@ -1,14 +1,15 @@
 
 
 <?php include 'includes/connection.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 ?>
 <?php include 'includes/header.php';?>
-
 <?php include 'includes/nav_bar.php';?>
 <?php
 if(!isset($_SESSION['username'])) {
 	?>
-	<!-- ======= Hero Slider Section ======= -->
 	<section id="hero" class="hero">
 		<div class="container-fluid" style="margin-top: 50px" data-aos="fade-in">
 			<div class="row">
@@ -88,10 +89,6 @@ if(!isset($_SESSION['username'])) {
             </div>
 		  </div>
 			  <?php }?>
-
-
-
-
           <div class="col-lg-8">
             <div class="row g-5">
 
@@ -167,9 +164,7 @@ if(!isset($_SESSION['username'])) {
 					  ?>
               </div>
 
-
-              <!-- Trending Section -->
-              <div class="col-lg-4">
+				<div class="col-lg-4">
 
                 <div class="trending">
                   <h3>Featured</h3>
@@ -205,7 +200,6 @@ if(!isset($_SESSION['username'])) {
       </div>
     </section>
 
-	  <!-- ======= Networking Category Section ======= -->
 	  <section class="posts">
 		  <div class="container" data-aos="fade-up">
 
@@ -320,6 +314,8 @@ if(!isset($_SESSION['username'])) {
 					  <?php
 					  $query = "SELECT * FROM `posts` WHERE tag = 'networking' ;";
 					  $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+					  //TODO:make the like button work
 					  if (mysqli_num_rows($run_query) > 0) {
 					  	while($row = mysqli_fetch_assoc($run_query)){
 					  $post_title = $row['title'];
@@ -329,6 +325,8 @@ if(!isset($_SESSION['username'])) {
 					  $post_image = $row['image'];
 					  $post_content = $row['content'];
 					  $post_tags = $row['tag'];
+					  $post_likes = $row['likes'];
+
 
 					  if ($post_status = "published"){
 					  ?>
@@ -339,17 +337,12 @@ if(!isset($_SESSION['username'])) {
 						  <div class="d-flex align-items-center author">
 							  <div class="photo"><img src="assets/img/person-1.jpg" alt="" class="img-fluid"></div>
 							  <div class="name"><h4 class="m-0 p-0"><?php echo $post_author; ?></h4></div>
-							  <div class="like">
-								  <img src="assets/img/icons/like-svgrepo-com.svg" alt="like button">
-								  <h5>54</h5>
-							  </div>
 							  <div class="share">
 								  <img src="assets/img/icons/share-arrow-svgrepo-com.svg" alt="share button">
 							  </div>
 						  </div>
 					  </div>
-					  <?php }
-					  else{
+					  <?php  } else{
 					  	echo "no networking posts";
 					  }}}?>
 
@@ -362,6 +355,7 @@ if(!isset($_SESSION['username'])) {
 
 
   </main>
+<script src="assets/js2/jquery.min.js"></script>
 
 <?php include 'includes/footer.php';?>
 
