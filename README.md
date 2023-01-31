@@ -199,4 +199,4 @@ The password can also be changed, however, only by providing the current passwor
 
 ## Developer
 
-* Developed by yours truly <a src="http//:devic.info"> Devic developer<a>
+* Developed by yours truly <a href="http//:devic.info"> Devic developer<a>
